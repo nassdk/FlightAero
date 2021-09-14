@@ -1,21 +1,21 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
+    id(Plugins.androidLibrary)
+    id(Plugins.kotlinAndroid)
 }
 
 android {
-    compileSdk = 31
-    buildToolsVersion = "30.0.3"
+    compileSdk = AndroidConfig.COMPILE_SDK
+    buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdk = 23
-        targetSdk = 31
+        minSdk = AndroidConfig.MIN_SDK
+        targetSdk = AndroidConfig.TARGET_SDK
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTAL_RUNNER
     }
 
     buildTypes {
-        getByName("release") {
+        getByName(BuildType.RELEASE) {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile(name = "proguard-android.txt"),
@@ -36,11 +36,4 @@ android {
     buildFeatures {
         viewBinding = true
     }
-}
-
-dependencies {
-
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("com.google.android.material:material:1.4.0")
 }

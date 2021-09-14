@@ -1,24 +1,24 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    id(Plugins.application)
+    id(Plugins.kotlinAndroid)
 }
 
 android {
-    compileSdk = 31
-    buildToolsVersion = "30.0.3"
+    compileSdk = AndroidConfig.COMPILE_SDK
+    buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId = "com.nassdk.flightaero"
-        minSdk = 23
-        targetSdk = 31
-        versionCode = 1
-        versionName = "0.1"
+        applicationId = AndroidConfig.APPLICATION_ID
+        minSdk = AndroidConfig.MIN_SDK
+        targetSdk = AndroidConfig.TARGET_SDK
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTAL_RUNNER
     }
 
     buildTypes {
-        getByName("release") {
+        getByName(BuildType.RELEASE) {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile(name = "proguard-android.txt"),
@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("com.google.android.material:material:1.4.0")
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.appCompat)
+    implementation(Dependencies.material)
 }

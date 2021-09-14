@@ -6,11 +6,12 @@ buildscript {
     }
 
     dependencies {
-        classpath(dependencyNotation = "com.android.tools.build:gradle:7.0.0")
-        classpath(dependencyNotation = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
+        classpath(dependencyNotation = Plugins.buildGradle)
+        classpath(dependencyNotation = Plugins.kotlin)
+        classpath(dependencyNotation = Plugins.serialization)
     }
 }
 
-task("clean") {
+task(Tasks.Clean) {
     delete(rootProject.buildDir)
 }
