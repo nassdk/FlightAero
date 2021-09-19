@@ -39,4 +39,6 @@ dependencies {
     implementation(project(":core-di"))
     implementation(project(":core-api"))
     implementation(project(":core-network"))
+
+    kapt(Dependencies.daggerCompiler)
 }

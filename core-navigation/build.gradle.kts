@@ -39,4 +39,6 @@ dependencies {
     implementation(project(":core-di"))
 
     api(Dependencies.cicerone)
+
+    kapt(Dependencies.daggerCompiler)
 }

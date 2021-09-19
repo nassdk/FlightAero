@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 
@@ -44,4 +48,5 @@ dependencies {
     implementation(Dependencies.serializationConverter)
     implementation(Dependencies.okHttp3)
     implementation(Dependencies.serializationJson)
+    kapt(Dependencies.daggerCompiler)
 }

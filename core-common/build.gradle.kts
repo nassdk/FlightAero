@@ -36,6 +36,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -53,4 +54,5 @@ dependencies {
     implementation(Dependencies.constraint)
     implementation(Dependencies.lifeCycleRuntime)
     implementation(Dependencies.lifecycleCommon)
+    kapt(Dependencies.daggerCompiler)
 }
