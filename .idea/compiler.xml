@@ -2,8 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
+      <module name="AndroidStudioProjects.FlightAero.core-common" target="11" />
+      <module name="AndroidStudioProjects.FlightAero.core-impl" target="11" />
+      <module name="AndroidStudioProjects.FlightAero.core-navigation" target="11" />
+      <module name="AndroidStudioProjects.FlightAero.core-network" target="11" />
+      <module name="AndroidStudioProjects.FlightAero.core-ui" target="11" />
       <module name="FlightAero.app" target="11" />
       <module name="FlightAero.buildSrc" target="11" />
+      <module name="FlightAero.core" target="11" />
+      <module name="FlightAero.core-common" target="11" />
+      <module name="FlightAero.core-impl" target="11" />
+      <module name="FlightAero.core-navigation" target="11" />
+      <module name="FlightAero.core-network" target="11" />
       <module name="FlightAero.core-ui" target="11" />
     </bytecodeTargetLevel>
   </component>
