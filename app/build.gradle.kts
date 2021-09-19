@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.application)
     id(Plugins.kotlinAndroid)
+    id(Plugins.kapt)
 }
 
 android {
@@ -38,10 +39,13 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
+    implementation(project(":core-common"))
+
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
     implementation(Dependencies.material)

@@ -1,5 +1,5 @@
 package com.nassdk.coreapi.error
 
 interface ErrorHandler {
-    fun getError(throwable: Throwable)
+    fun getError(throwable: Throwable): ErrorWrapper
 }

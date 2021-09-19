@@ -6,4 +6,7 @@ object Plugins {
     const val application = "com.android.application"
     const val kotlinAndroid = "kotlin-android"
     const val androidLibrary = "com.android.library"
+    const val javaLibrary = "java-library"
+    const val kotlinMin = "kotlin"
+    const val kapt = "kotlin-kapt"
 }

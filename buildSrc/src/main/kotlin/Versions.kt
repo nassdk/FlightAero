@@ -14,6 +14,7 @@ object Versions {
     const val OKHTTP3 = "4.9.0"
     const val RETROFIT = "2.9.0"
     const val TIMBER = "4.7.1"
+    const val CICERONE = "7.0"
 
     const val BUILD_GRADLE = "7.0.0"
 }
