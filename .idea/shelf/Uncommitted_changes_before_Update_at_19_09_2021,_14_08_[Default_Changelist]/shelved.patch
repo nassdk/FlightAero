@@ -1,0 +1,19 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <bytecodeTargetLevel target=\"1.7\">\n      <module name=\"AndroidStudioProjects.FlightAero.core-common\" target=\"11\" />\n      <module name=\"AndroidStudioProjects.FlightAero.core-impl\" target=\"11\" />\n      <module name=\"AndroidStudioProjects.FlightAero.core-navigation\" target=\"11\" />\n      <module name=\"AndroidStudioProjects.FlightAero.core-network\" target=\"11\" />\n      <module name=\"AndroidStudioProjects.FlightAero.core-ui\" target=\"11\" />\n      <module name=\"FlightAero.app\" target=\"11\" />\n      <module name=\"FlightAero.buildSrc\" target=\"11\" />\n      <module name=\"FlightAero.core\" target=\"11\" />\n      <module name=\"FlightAero.core-common\" target=\"11\" />\n      <module name=\"FlightAero.core-impl\" target=\"11\" />\n      <module name=\"FlightAero.core-navigation\" target=\"11\" />\n      <module name=\"FlightAero.core-network\" target=\"11\" />\n      <module name=\"FlightAero.core-ui\" target=\"11\" />\n    </bytecodeTargetLevel>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision c39a911982c75924fc3533875c7bd721f7f59dde)
++++ b/.idea/compiler.xml	(date 1632049627457)
+@@ -7,6 +7,8 @@
+       <module name="AndroidStudioProjects.FlightAero.core-navigation" target="11" />
+       <module name="AndroidStudioProjects.FlightAero.core-network" target="11" />
+       <module name="AndroidStudioProjects.FlightAero.core-ui" target="11" />
++      <module name="core.FlightAero.core-impl" target="11" />
++      <module name="core.FlightAero.core-ui" target="11" />
+       <module name="FlightAero.app" target="11" />
+       <module name="FlightAero.buildSrc" target="11" />
+       <module name="FlightAero.core" target="11" />
