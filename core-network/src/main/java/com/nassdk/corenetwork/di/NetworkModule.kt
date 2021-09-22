@@ -10,6 +10,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 @Module
@@ -17,10 +18,22 @@ object NetworkModule {
 
     @Provides
     @Reusable
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        return interceptor
+    }
+
+    @Provides
+    @Reusable
     fun provideOkHttp3(
-        appInterceptor: AppInterceptor
+        appInterceptor: AppInterceptor,
+        loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient = OkHttpClient.Builder().apply {
-        if (BuildConfig.DEBUG) addInterceptor(appInterceptor)
+        if (BuildConfig.DEBUG) {
+            addInterceptor(appInterceptor)
+            addInterceptor(loggingInterceptor)
+        }
     }.build()
 
 
