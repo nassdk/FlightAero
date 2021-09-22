@@ -54,7 +54,7 @@ object NetworkModule {
         json: Json
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://api.vk.com/method/")
+            .baseUrl("http://api.aviationstack.com/v1/")
             .client(client)
             .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
             .build()
