@@ -1,5 +1,5 @@
 plugins {
-    id(Plugins.application)
+    id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
 }
@@ -9,11 +9,8 @@ android {
     buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId = AndroidConfig.APPLICATION_ID
         minSdk = AndroidConfig.MIN_SDK
         targetSdk = AndroidConfig.TARGET_SDK
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
 
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTAL_RUNNER
     }
@@ -45,9 +42,6 @@ android {
 
 dependencies {
     implementation(project(":core-common"))
-    implementation(project(":feature-splash"))
 
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.material)
+    kapt(Dependencies.daggerCompiler)
 }

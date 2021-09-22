@@ -2,6 +2,7 @@ package com.nassdk.corecommon.di
 
 import android.content.Context
 import com.nassdk.corecommon.base.BaseActivity
+import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -17,4 +18,6 @@ interface AppComponent {
     }
 
     fun inject(activity: BaseActivity)
+
+    fun exposeGlobalNavigator(): GlobalNavigator
 }

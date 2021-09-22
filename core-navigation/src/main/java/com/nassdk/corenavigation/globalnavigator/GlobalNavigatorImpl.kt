@@ -2,8 +2,9 @@ package com.nassdk.corenavigation.globalnavigator
 
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.nassdk.corenavigation.handler.NavigationHandler
+import javax.inject.Inject
 
-class GlobalNavigatorImpl : GlobalNavigator {
+class GlobalNavigatorImpl @Inject constructor() : GlobalNavigator {
 
     private var navigationHandler: NavigationHandler? = null
 

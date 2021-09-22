@@ -48,11 +48,15 @@ dependencies {
     api(project(":core-navigation"))
     api(project(":core-ui"))
 
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
+    api(Dependencies.coreKtx)
+    api(Dependencies.appCompat)
+    api(Dependencies.lifeCycleRuntime)
+    api(Dependencies.lifecycleViewModel)
+    api(Dependencies.fragment)
+    api(Dependencies.coil)
+    api(Dependencies.lifecycleCommon)
+    api(Dependencies.constraint)
+
     implementation(Dependencies.serializationJson)
-    implementation(Dependencies.constraint)
-    implementation(Dependencies.lifeCycleRuntime)
-    implementation(Dependencies.lifecycleCommon)
     kapt(Dependencies.daggerCompiler)
 }

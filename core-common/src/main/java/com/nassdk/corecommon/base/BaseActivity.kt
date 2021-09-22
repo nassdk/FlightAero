@@ -8,6 +8,7 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.nassdk.corecommon.extensions.appComponent
 import com.nassdk.corecommon.extensions.uiLazy
 import com.nassdk.corecommon.navigator.Navigator
+import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
 import com.nassdk.corenavigation.handler.NavigationHandler
 import javax.inject.Inject
 
@@ -19,6 +20,9 @@ abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
 
+    @Inject
+    lateinit var globalNavigator: GlobalNavigator
+
     private val navigator by uiLazy {
         Navigator(
             activity = this,
@@ -29,6 +33,8 @@ abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         appComponent.inject(this)
         super.onCreate(savedInstanceState)
+
+        globalNavigator.setNavigationHandler(this)
     }
 
     override fun onResume() {

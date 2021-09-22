@@ -33,3 +33,4 @@ include(":core-common")
 //    }
 //}
 
+include(":feature-splash")
