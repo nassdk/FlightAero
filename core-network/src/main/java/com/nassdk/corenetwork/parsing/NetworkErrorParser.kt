@@ -8,7 +8,8 @@ class NetworkErrorParser @Inject constructor(
     private val json: Json
 ) {
     fun parseError(response: String?): NetworkErrorModel? = try {
-        json.decodeFromString<NetworkErrorModel>(response!!)
+        val errorResponse = json.decodeFromString<NetworkErrorResponse>(response!!)
+        errorResponse.errorModel
     } catch (e: Exception) {
         null
     }
