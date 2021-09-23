@@ -37,3 +37,8 @@ android {
         viewBinding = true
     }
 }
+
+dependencies {
+    api(Dependencies.constraint)
+    api(Dependencies.appCompat)
+}

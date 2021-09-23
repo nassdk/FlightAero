@@ -47,13 +47,11 @@ dependencies {
     api(project(":core-ui"))
 
     api(Dependencies.coreKtx)
-    api(Dependencies.appCompat)
     api(Dependencies.lifeCycleRuntime)
     api(Dependencies.lifecycleViewModel)
     api(Dependencies.fragment)
     api(Dependencies.coil)
     api(Dependencies.lifecycleCommon)
-    api(Dependencies.constraint)
 
     implementation(Dependencies.serializationJson)
     kapt(Dependencies.daggerCompiler)

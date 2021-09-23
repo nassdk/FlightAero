@@ -22,7 +22,7 @@ fun View.makeInvisible() {
     visibility = View.INVISIBLE
 }
 
-fun View.debouncedClick(milliseconds: Long = 500, listener: (v: View) -> Unit) {
+inline fun View.debouncedClick(milliseconds: Long = 500, crossinline listener: (v: View) -> Unit) {
     setOnClickListener {
         object : com.nassdk.coreui.DebouncedOnClickListener(minimumIntervalMillis = milliseconds) {
             override fun onDebouncedClick(v: View) {
