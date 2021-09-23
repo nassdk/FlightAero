@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.7">
       <module name="core.FlightAero.core-impl" target="11" />
       <module name="core.FlightAero.core-ui" target="11" />
+      <module name="FlightAero.core-impl" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

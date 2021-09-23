@@ -1,6 +1,5 @@
 package com.nassdk.corecommon.di
 
-import com.nassdk.coreimpl.di.CoreApiModule
 import com.nassdk.corenavigation.di.NavigationModule
 import com.nassdk.corenetwork.di.NetworkModule
 import dagger.Module

@@ -11,7 +11,7 @@ import com.nassdk.corecommon.base.BaseFragment
 import com.nassdk.corecommon.enums.TransitionType
 import com.nassdk.corecommon.extensions.hideKeyboard
 
-class Navigator(
+internal class Navigator(
     activity: FragmentActivity,
     containerId: Int
 ) : AppNavigator(

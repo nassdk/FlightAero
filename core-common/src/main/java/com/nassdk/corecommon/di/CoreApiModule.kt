@@ -1,9 +1,9 @@
-package com.nassdk.coreimpl.di
+package com.nassdk.corecommon.di
 
-import com.nassdk.coreapi.error.ErrorHandler
-import com.nassdk.coreapi.resourcemanager.ResourceManager
-import com.nassdk.coreimpl.error.ErrorHandlerImpl
-import com.nassdk.coreimpl.resourcemanager.ResourceManagerImpl
+import com.nassdk.corecommon.error.ErrorHandler
+import com.nassdk.corecommon.error.ErrorHandlerImpl
+import com.nassdk.corecommon.resourcemanager.ResourceManager
+import com.nassdk.corecommon.resourcemanager.ResourceManagerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Reusable

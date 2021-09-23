@@ -1,4 +1,4 @@
-package com.nassdk.coreapi.error
+package com.nassdk.corecommon.error
 
 sealed class ErrorWrapper {
     object Unknown : ErrorWrapper()

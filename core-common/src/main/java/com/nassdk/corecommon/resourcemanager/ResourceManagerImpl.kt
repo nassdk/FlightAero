@@ -1,7 +1,6 @@
-package com.nassdk.coreimpl.resourcemanager
+package com.nassdk.corecommon.resourcemanager
 
 import android.content.Context
-import com.nassdk.coreapi.resourcemanager.ResourceManager
 import javax.inject.Inject
 
 class ResourceManagerImpl @Inject constructor(

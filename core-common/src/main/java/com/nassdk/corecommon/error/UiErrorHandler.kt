@@ -1,9 +1,7 @@
 package com.nassdk.corecommon.error
 
-import com.nassdk.coreapi.error.ErrorHandler
-import com.nassdk.coreapi.error.ErrorWrapper
-import com.nassdk.coreapi.resourcemanager.ResourceManager
 import com.nassdk.corecommon.R
+import com.nassdk.corecommon.resourcemanager.ResourceManager
 import dagger.Reusable
 import javax.inject.Inject
 

@@ -1,7 +1,5 @@
-package com.nassdk.coreimpl.error
+package com.nassdk.corecommon.error
 
-import com.nassdk.coreapi.error.ErrorHandler
-import com.nassdk.coreapi.error.ErrorWrapper
 import com.nassdk.corenetwork.parsing.NetworkErrorParser
 import retrofit2.HttpException
 import java.io.IOException

@@ -9,8 +9,6 @@ dependencyResolutionManagement {
 rootProject.name = "FlightAero"
 
 include(":app")
-include(":core-api")
-include(":core-impl")
 include(":core-network")
 include(":core-navigation")
 include(":core-di")
