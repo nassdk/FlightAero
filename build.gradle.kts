@@ -9,7 +9,6 @@ buildscript {
         classpath(dependencyNotation = Plugins.buildGradle)
         classpath(dependencyNotation = Plugins.kotlin)
         classpath(dependencyNotation = Plugins.serialization)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
     }
 }
 
