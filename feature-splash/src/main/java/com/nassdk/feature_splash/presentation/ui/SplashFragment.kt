@@ -1,6 +1,5 @@
 package com.nassdk.feature_splash.presentation.ui
 
-import android.os.Bundle
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.nassdk.corecommon.base.BaseFragment
 import com.nassdk.feature_splash.R
@@ -15,15 +14,6 @@ class SplashFragment : BaseFragment(R.layout.screen_splash) {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        SplashFeature.getComponent().inject(this)
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onDestroy() {
-        if (isRemoving) {
-            SplashFeature.destroyModuleGraph()
-        }
-        super.onDestroy()
-    }
+    override fun setupInjection() = SplashFeature.getComponent().inject(this)
+    override fun onFinalDestroy() = SplashFeature.destroyModuleGraph()
 }

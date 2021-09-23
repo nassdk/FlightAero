@@ -14,14 +14,9 @@ import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
 
-    @Inject
-    lateinit var router: Router
-
-    @Inject
-    lateinit var navigatorHolder: NavigatorHolder
-
-    @Inject
-    lateinit var globalNavigator: GlobalNavigator
+    @Inject lateinit var router: Router
+    @Inject lateinit var navigatorHolder: NavigatorHolder
+    @Inject lateinit var globalNavigator: GlobalNavigator
 
     private val navigator by uiLazy {
         Navigator(

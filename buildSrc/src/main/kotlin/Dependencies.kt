@@ -10,6 +10,7 @@ object Dependencies {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     const val lifeCycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
+    const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE}"
     const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE}"
     const val okHttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP3}"
     const val logging = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3}"
