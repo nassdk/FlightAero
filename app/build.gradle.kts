@@ -2,6 +2,7 @@ plugins {
     id(Plugins.application)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
+    id(Plugins.versions)
 }
 
 android {

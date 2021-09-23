@@ -2,6 +2,7 @@ plugins {
     id(Plugins.javaLibrary)
     id(Plugins.kotlinMin)
     id(Plugins.kapt)
+    id(Plugins.versions)
 }
 
 java {
