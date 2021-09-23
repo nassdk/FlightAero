@@ -10,6 +10,7 @@ import com.nassdk.corecommon.R
 import com.nassdk.corecommon.base.BaseFragment
 import com.nassdk.corecommon.enums.TransitionType
 import com.nassdk.corecommon.extensions.hideKeyboard
+import com.nassdk.corecommon.extensions.ifNull
 
 internal class Navigator(
     activity: FragmentActivity,
@@ -26,7 +27,8 @@ internal class Navigator(
         nextFragment: Fragment
     ) {
 
-        val transitionType = (nextFragment as BaseFragment).transitionType
+        val transitionType = (nextFragment as? BaseFragment)?.transitionType
+            .ifNull(TransitionType.NONE)
 
         if (currentFragment == null
             || currentFragment == nextFragment
