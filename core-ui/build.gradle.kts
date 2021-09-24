@@ -42,4 +42,5 @@ android {
 dependencies {
     api(Dependencies.constraint)
     api(Dependencies.appCompat)
+    api(Dependencies.material)
 }
