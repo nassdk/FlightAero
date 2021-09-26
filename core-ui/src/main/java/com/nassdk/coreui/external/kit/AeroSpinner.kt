@@ -223,7 +223,7 @@ class AeroSpinner @JvmOverloads constructor(
     }
 
     companion object {
-        private const val SPIN_DURATION = 1000L
+        private const val SPIN_DURATION = 1500L
         private const val SPIN_END_DURATION = 700L
         private const val MAX_ANGLE = 360
         private const val SPINNER_START_ANGLE = -45F
