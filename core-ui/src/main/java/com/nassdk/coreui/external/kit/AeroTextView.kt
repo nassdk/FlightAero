@@ -17,8 +17,6 @@ open class AeroTextView @JvmOverloads constructor(
 
     private val androidTextColorAttr = intArrayOf(android.R.attr.textColor)
     private val defaultTextColor = ContextCompat.getColor(context, R.color.ui_primary_white)
-    private var baselineToTop = 0
-    private var baselineToBottom = 0
 
     init {
         letterSpacing = LETTER_SPACING
