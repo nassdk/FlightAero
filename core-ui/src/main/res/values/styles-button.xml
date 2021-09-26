@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AeroButton">
+        <attr name="buttonTitle" format="string" />
+        <attr name="buttonHeight" format="dimension" />
+        <attr name="buttonBorderRadius" format="dimension" />
+        <attr name="buttonBorderWidth" format="dimension" />
+        <attr name="buttonSpinnerSize" format="dimension" />
+        <attr name="buttonSpinnerStyleId" format="reference" />
+        <attr name="buttonBorderColor" format="color|reference" />
+        <attr name="buttonDisabledBorderColor" format="color|reference" />
+        <attr name="buttonActiveBackground" format="color|reference" />
+        <attr name="buttonInactiveBackground" format="color|reference" />
+        <attr name="buttonTextColor" format="reference|color" />
+        <attr name="buttonDisabledTextColor" format="reference|color" />
+        <attr name="buttonTextStyleId" format="reference" />
+        <attr name="buttonHasShadow" format="boolean" />
+        <attr name="buttonIsLoading" format="boolean" />
+        <attr name="buttonIsEnabled" format="boolean" />
+
+    </declare-styleable>
+
+    <!-- !!!......STYLES-START......!!! -->
+
+    <!--    <style name="ViennaButtonAccent">-->
+    <!--        <item name="buttonBackgroundColor">@color/vienna_primary_brand_accent</item>-->
+    <!--        <item name="buttonBorderColor">@null</item>-->
+    <!--        <item name="buttonBorderWidth">@null</item>-->
+    <!--        <item name="buttonDisableBackgroundColor">@color/vienna_primary_seattle_c10</item>-->
+    <!--        <item name="buttonDisableBorderColor">@null</item>-->
+    <!--        <item name="buttonDisableTextColor">@color/vienna_primary_seattle_c60</item>-->
+    <!--        <item name="buttonHeight">@dimen/vienna_layout_size_s14</item>-->
+    <!--        <item name="buttlonPressedBackgroundColor">@null</item>-->
+    <!--        <item name="buttonSpinnerStyle">@style/ViennaSpinnerPrimary</item>-->
+    <!--        <item name="buttonTextColor">@color/vienna_primary_brand_primary</item>-->
+    <!--    </style>-->
+
+    <!--    <style name="ViennaButtonOutline">-->
+    <!--        <item name="buttonBackgroundColor">@null</item>-->
+    <!--        <item name="buttonBorderColor">@color/vienna_primary_seattle_c30</item>-->
+    <!--        <item name="buttonBorderWidth">@dimen/vienna_border_width_m</item>-->
+    <!--        <item name="buttonDisableBackgroundColor">@color/vienna_primary_brand_white</item>-->
+    <!--        <item name="buttonDisableBorderColor">@color/vienna_primary_seattle_c10</item>-->
+    <!--        <item name="buttonDisableTextColor">@color/vienna_primary_seattle_c60</item>-->
+    <!--        <item name="buttonHeight">@dimen/vienna_layout_size_s14</item>-->
+    <!--        <item name="buttonPressedBackgroundColor">@null</item>-->
+    <!--        <item name="buttonSpinnerStyle">@style/ViennaSpinnerPrimary</item>-->
+    <!--        <item name="buttonTextColor">@color/vienna_primary_brand_primary</item>-->
+    <!--    </style>-->
+
+    <!--    <style name="ViennaButtonGhost">-->
+    <!--        <item name="buttonBackgroundColor">@null</item>-->
+    <!--        <item name="buttonBorderColor">@null</item>-->
+    <!--        <item name="buttonBorderWidth">@null</item>-->
+    <!--        <item name="buttonDisableBackgroundColor">@null</item>-->
+    <!--        <item name="buttonDisableBorderColor">@null</item>-->
+    <!--        <item name="buttonDisableTextColor">@color/vienna_primary_seattle_c60</item>-->
+    <!--        <item name="buttonHeight">@dimen/vienna_layout_size_s14</item>-->
+    <!--        <item name="buttonPressedBackgroundColor">@color/vienna_primary_seattle_c01</item>-->
+    <!--        <item name="buttonSpinnerStyle">@style/ViennaSpinnerPrimary</item>-->
+    <!--        <item name="buttonTextColor">@color/vienna_primary_brand_primary</item>-->
+    <!--    </style>-->
+
+</resources>

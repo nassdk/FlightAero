@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AeroShadow">
+        <attr name="color" format="color" />
+        <attr name="offsetX" format="dimension" />
+        <attr name="offsetY" format="dimension" />
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <!-- !!!......STYLES-START......!!! -->
+
+    <style name="AeroShadowM">
+        <item name="color">@color/ui_shadow</item>
+        <item name="offsetX">0dp</item>
+        <item name="offsetY">2dp</item>
+        <item name="radius">12dp</item>
+    </style>
+
+    <style name="AeroShadowL">
+        <item name="color">@color/ui_shadow</item>
+        <item name="offsetX">0dp</item>
+        <item name="offsetY">4dp</item>
+        <item name="radius">20dp</item>
+    </style>
+
+    <style name="AeroShadowXl">
+        <item name="color">@color/ui_shadow</item>
+        <item name="offsetX">0dp</item>
+        <item name="offsetY">8dp</item>
+        <item name="radius">32dp</item>
+    </style>
+</resources>

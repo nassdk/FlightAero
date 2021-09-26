@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ui_shadow">#33000000</color>
     <color name="ui_black">#000000</color>
-    <color name="ui_transp">#00000000</color>
+    <color name="ui_transparent">#00000000</color>
     <color name="ui_white">#FFFFFF</color>
     <color name="ui_primary_white">#F1F1F1</color>
     <color name="ui_primary_orange">#FF9A8D</color>

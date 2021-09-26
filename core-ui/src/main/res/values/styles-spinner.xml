@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="spinner.size.L">20dp</dimen>
+    <dimen name="spinner.size.M">24dp</dimen>
+    <dimen name="spinner.size.S">32dp</dimen>
+    <dimen name="spinner.size.XL">38dp</dimen>
+
+    <dimen name="spinner.stroke.L">2dp</dimen>
+    <dimen name="spinner.stroke.M">3dp</dimen>
+    <dimen name="spinner.stroke.S">4dp</dimen>
+    <dimen name="spinner.stroke.XL">5dp</dimen>
+
+    <declare-styleable name="AeroSpinner">
+        <attr name="spinnerSize" format="dimension" />
+        <attr name="spinnerStrokeColor" format="reference" />
+        <attr name="spinnerStrokeWidth" format="dimension" />ø
+    </declare-styleable>
+
+    <!-- !!!......STYLES-START......!!! -->
+
+    <style name="AeroSpinnerLOrange">
+        <item name="spinnerSize">@dimen/spinner.size.L</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_orange</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.L</item>
+    </style>
+
+    <style name="AeroSpinnerMOrange">
+        <item name="spinnerSize">@dimen/spinner.size.M</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_orange</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.M</item>
+    </style>
+
+    <style name="AeroSpinnerLBlue">
+        <item name="spinnerSize">@dimen/spinner.size.L</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_blue</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.L</item>
+    </style>
+
+    <style name="AeroSpinnerMBlue">
+        <item name="spinnerSize">@dimen/spinner.size.M</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_blue</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.M</item>
+    </style>
+
+    <style name="AeroSpinnerLGray">
+        <item name="spinnerSize">@dimen/spinner.size.L</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_gray</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.L</item>
+    </style>
+
+    <style name="AeroSpinnerMGray">
+        <item name="spinnerSize">@dimen/spinner.size.M</item>
+        <item name="spinnerStrokeColor">@color/ui_primary_gray</item>
+        <item name="spinnerStrokeWidth">@dimen/spinner.stroke.M</item>
+    </style>
+
+</resources>

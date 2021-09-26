@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AeroCardView">
+        <attr name="cardBackgroundColor" format="color|reference" />
+        <attr name="cardBorderRadius" format="dimension" />
+        <attr name="cardHasClickAnimation" format="boolean" />
+        <attr name="cardShadowStyle" format="reference" />
+    </declare-styleable>
+
+    <!-- !!!......STYLES-START......!!! -->
+
+</resources>

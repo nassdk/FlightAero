@@ -47,7 +47,6 @@ dependencies {
     api(project(":core-navigation"))
     api(project(":core-ui"))
 
-    api(Dependencies.coreKtx)
     api(Dependencies.lifeCycleRuntime)
     api(Dependencies.lifecycleViewModel)
     api(Dependencies.fragment)

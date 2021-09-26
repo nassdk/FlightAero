@@ -42,5 +42,6 @@ android {
 dependencies {
     api(Dependencies.constraint)
     api(Dependencies.appCompat)
+    api(Dependencies.coreKtx)
     api(Dependencies.material)
 }

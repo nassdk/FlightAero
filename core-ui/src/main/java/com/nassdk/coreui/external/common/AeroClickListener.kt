@@ -1,4 +1,4 @@
-package com.nassdk.coreui
+package com.nassdk.coreui.external.common
 
 import android.os.SystemClock
 import android.view.View
@@ -11,7 +11,7 @@ import kotlin.math.abs
  * Rejects clicks that are too close together in time.
  * This class is safe to use as an OnClickListener for multiple views, and will debounce each one separately.
  */
-abstract class DebouncedOnClickListener(
+abstract class AeroClickListener(
     private val minimumIntervalMillis: Long
 ) : View.OnClickListener {
 

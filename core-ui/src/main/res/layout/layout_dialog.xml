@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="0dp"
-    app:cardCornerRadius="@dimen/radius_12"
     tools:layout_gravity="center">
 
     <androidx.appcompat.widget.AppCompatTextView

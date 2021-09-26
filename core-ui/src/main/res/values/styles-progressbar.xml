@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="ProgressBar.Primary.Orange" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorAccent">@color/ui_primary_orange</item>
-    </style>
-
-</resources>

@@ -1,6 +1,7 @@
 package com.nassdk.corecommon.extensions
 
 import android.view.View
+import com.nassdk.coreui.external.common.AeroClickListener
 
 fun View.isVisible(visible: Boolean) {
     visibility = if (visible) View.VISIBLE else View.GONE
@@ -24,7 +25,7 @@ fun View.makeInvisible() {
 
 inline fun View.debouncedClick(milliseconds: Long = 500, crossinline listener: (v: View) -> Unit) {
     setOnClickListener {
-        object : com.nassdk.coreui.DebouncedOnClickListener(minimumIntervalMillis = milliseconds) {
+        object : AeroClickListener(minimumIntervalMillis = milliseconds) {
             override fun onDebouncedClick(v: View) {
                 listener.invoke(v)
             }
