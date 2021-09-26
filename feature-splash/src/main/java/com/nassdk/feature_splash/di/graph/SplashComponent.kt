@@ -1,6 +1,5 @@
 package com.nassdk.feature_splash.di.graph
 
-import com.nassdk.feature_splash.SplashApi
 import com.nassdk.feature_splash.SplashCoreDependencies
 import com.nassdk.feature_splash.di.module.SplashModule
 import com.nassdk.feature_splash.presentation.ui.SplashFragment
@@ -16,6 +15,4 @@ internal interface SplashComponent {
     }
 
     fun inject(fragment: SplashFragment)
-
-    fun moduleApi(): SplashApi
 }

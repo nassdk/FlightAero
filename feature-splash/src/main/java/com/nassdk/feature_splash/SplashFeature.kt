@@ -1,6 +1,5 @@
 package com.nassdk.feature_splash
 
-import androidx.annotation.MainThread
 import com.nassdk.corecommon.base.BaseApplication
 import com.nassdk.corecommon.di.AppComponent
 import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
@@ -10,9 +9,6 @@ import com.nassdk.feature_splash.di.graph.SplashComponent
 object SplashFeature {
 
     private var component: SplashComponent? = null
-
-    @MainThread
-    fun getApi(): SplashApi = getComponent().moduleApi()
 
     internal fun getComponent(): SplashComponent =
         component ?: run {
