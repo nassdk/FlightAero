@@ -38,6 +38,7 @@ android {
 
 dependencies {
     implementation(project(":core-di"))
+    implementation(project(":core-ui"))
 
     api(Dependencies.cicerone)
 

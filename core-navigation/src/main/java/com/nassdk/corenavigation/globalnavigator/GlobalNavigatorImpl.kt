@@ -1,7 +1,9 @@
 package com.nassdk.corenavigation.globalnavigator
 
+import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.nassdk.corenavigation.handler.NavigationHandler
+import com.nassdk.coreui.external.common.BottomDialogParams
 import javax.inject.Inject
 
 class GlobalNavigatorImpl @Inject constructor() : GlobalNavigator {
@@ -28,11 +30,23 @@ class GlobalNavigatorImpl @Inject constructor() : GlobalNavigator {
         navigationHandler?.newRootFragmentChain(screens = screens)
     }
 
+    override fun openBottomFragment(
+        fragment: Fragment,
+        bottomDialogParams: BottomDialogParams
+    ) {
+        navigationHandler?.openBottomFragment(
+            fragment = fragment,
+            bottomDialogParams = bottomDialogParams
+        )
+    }
+
+    override fun closeBottomFragment() {
+        navigationHandler?.closeBottomFragment()
+    }
+
     override fun returnTo(screen: FragmentScreen) {
         navigationHandler?.returnTo(screen = screen)
     }
-
-
 
     override fun exit() {
         navigationHandler?.exit()

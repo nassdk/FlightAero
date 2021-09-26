@@ -30,7 +30,7 @@ abstract class BaseFragment(@LayoutRes layoutResId: Int) : Fragment(layoutResId)
         }
     }
 
-    protected open fun onFinalDestroy() = Unit
+    open fun onFinalDestroy() = Unit
 
     private fun isRealDestroy(): Boolean =
         when {

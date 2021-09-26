@@ -2,6 +2,7 @@ plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.versions)
+    id(Plugins.parcelize)
 }
 
 android {
@@ -43,5 +44,7 @@ dependencies {
     api(Dependencies.constraint)
     api(Dependencies.appCompat)
     api(Dependencies.coreKtx)
+    api(Dependencies.fragment)
+    api(Dependencies.coil)
     api(Dependencies.material)
 }

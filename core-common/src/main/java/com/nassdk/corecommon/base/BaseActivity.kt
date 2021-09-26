@@ -2,14 +2,17 @@ package com.nassdk.corecommon.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.nassdk.corecommon.extensions.appComponent
 import com.nassdk.corecommon.extensions.uiLazy
 import com.nassdk.corecommon.navigator.Navigator
+import com.nassdk.corecommon.patterns.BottomDialogFragment
 import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
 import com.nassdk.corenavigation.handler.NavigationHandler
+import com.nassdk.coreui.external.common.BottomDialogParams
 import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
@@ -24,6 +27,8 @@ abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
             containerId = containerResId
         )
     }
+
+    protected var currentBottomFragment: BottomDialogFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         appComponent.inject(this)
@@ -62,6 +67,32 @@ abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
         router.backTo(screen = screen)
     }
 
+    override fun openBottomFragment(
+        fragment: Fragment,
+        bottomDialogParams: BottomDialogParams
+    ) {
+        currentBottomFragment?.dismiss()
+        currentBottomFragment = null
+
+        currentBottomFragment = BottomDialogFragment.newInstance(bottomDialogParams)
+        currentBottomFragment?.setOnDismissListener { currentBottomFragment = null }
+
+        currentBottomFragment?.createFragmentFunction = { fragment }
+
+        currentBottomFragment?.show(supportFragmentManager, BOTTOM_FRAGMENT_TAG)
+    }
+
+    override fun closeBottomFragment() {
+        if (currentBottomFragment != null) {
+            currentBottomFragment?.dismiss()
+        } else {
+            (supportFragmentManager.findFragmentByTag(
+                BOTTOM_FRAGMENT_TAG
+            ) as? BottomDialogFragment)?.dismiss()
+        }
+        currentBottomFragment = null
+    }
+
     override fun exit() {
         router.exit()
     }
@@ -69,4 +100,8 @@ abstract class BaseActivity : AppCompatActivity(), NavigationHandler {
     override fun onBackPressed() = router.exit()
 
     abstract val containerResId: Int
+
+    private companion object {
+        private val BOTTOM_FRAGMENT_TAG = BottomDialogFragment::class.java.simpleName
+    }
 }

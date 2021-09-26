@@ -49,8 +49,6 @@ dependencies {
 
     api(Dependencies.lifeCycleRuntime)
     api(Dependencies.lifecycleViewModel)
-    api(Dependencies.fragment)
-    api(Dependencies.coil)
     api(Dependencies.lifecycleCommon)
 
     implementation(Dependencies.serializationJson)
