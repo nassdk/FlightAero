@@ -50,6 +50,7 @@ dependencies {
     api(Dependencies.lifeCycleRuntime)
     api(Dependencies.lifecycleViewModel)
     api(Dependencies.lifecycleCommon)
+    api(Dependencies.timber)
 
     implementation(Dependencies.serializationJson)
     kapt(Dependencies.daggerCompiler)
