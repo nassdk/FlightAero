@@ -3,7 +3,17 @@
     <style name="Theme.FlightAero" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/ui_primary_white</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/ui_primary_white</item>
+        <item name="android:navigationBarColor">@color/ui_primary_white</item>z¬
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowBackground">@color/ui_primary_white</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">
+            @color/ui_primary_white
+        </item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
+            @drawable/ic_logo_big
+        </item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">
+            @color/ui_primary_white
+        </item>
     </style>
 </resources>
