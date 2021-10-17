@@ -1,4 +1,4 @@
-package com.nassdk.coreui.internal
+package com.nassdk.coreui.external.helpers
 
 import android.content.res.Resources
 import android.util.DisplayMetrics

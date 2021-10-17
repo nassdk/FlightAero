@@ -5,6 +5,10 @@
       <map>
         <entry key="core-ui/src/main/res/layout/layout_bottom_dialog.xml" value="0.42083333333333334" />
         <entry key="core-ui/src/main/res/layout/layout_dialog.xml" value="0.31666666666666665" />
+        <entry key="feature-flights/src/main/res/layout/screen_flights.xml" value="0.42083333333333334" />
+        <entry key="feature-flights/src/main/res/layout/screen_flow.xml" value="0.42083333333333334" />
+        <entry key="feature-flow/src/main/res/layout/screen_flow.xml" value="0.375" />
+        <entry key="feature-flow/src/main/res/layout/screen_splash.xml" value="0.42083333333333334" />
         <entry key="feature-splash/src/main/res/layout/activity_main.xml" value="0.42083333333333334" />
         <entry key="feature-splash/src/main/res/layout/screen_splash.xml" value="0.335" />
       </map>

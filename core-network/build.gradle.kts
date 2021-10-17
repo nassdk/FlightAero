@@ -45,10 +45,10 @@ dependencies {
     implementation(project(":core-di"))
 
     api(Dependencies.retrofit)
+    api(Dependencies.serializationJson)
 
     implementation(Dependencies.serializationConverter)
     implementation(Dependencies.okHttp3)
     implementation(Dependencies.logging)
-    implementation(Dependencies.serializationJson)
     kapt(Dependencies.daggerCompiler)
 }

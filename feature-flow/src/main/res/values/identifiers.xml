@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="flow_tab_flights_id" type="id" />
+    <item name="flow_tab_profile_id" type="id" />
+</resources>

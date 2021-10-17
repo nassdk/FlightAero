@@ -1,16 +1,9 @@
 package com.nassdk.corecommon.extensions
 
-fun Number?.orZero(): Number {
-
-    if (this != null) return this
-
-    return when (this) {
-        is Int -> 0
-        is Double -> 0.0
-        is Float -> 0.0f
-        is Long -> 0L
-        else -> 0
-    }
-}
+fun Int?.orZero(): Int = this ?: 0
+fun Long?.orZero(): Long = this ?: 0L
+fun Float?.orZero(): Float = this ?: 0f
+fun Double?.orZero(): Double = this ?: 0.0
 
 fun Boolean?.orFalse(): Boolean = this ?: false
+fun Boolean?.orTrue(): Boolean = this ?: true

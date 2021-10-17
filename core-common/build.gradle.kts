@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-network"))
+    api(project(":core-network"))
     api(project(":core-di"))
     api(project(":core-navigation"))
     api(project(":core-ui"))
@@ -51,6 +51,7 @@ dependencies {
     api(Dependencies.lifecycleViewModel)
     api(Dependencies.lifecycleCommon)
     api(Dependencies.timber)
+    api(Dependencies.viewBindingPropertyDelegate)
 
     implementation(Dependencies.serializationJson)
     kapt(Dependencies.daggerCompiler)

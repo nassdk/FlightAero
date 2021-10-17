@@ -2,7 +2,7 @@ package com.nassdk.flightaero
 
 import android.os.Bundle
 import com.nassdk.corecommon.base.BaseActivity
-import com.nassdk.feature_splash.presentation.ui.SplashFragment
+import com.nassdk.flightaero.mediators.MediatorManager
 
 class AppActivity : BaseActivity() {
 
@@ -14,7 +14,8 @@ class AppActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            globalNavigator.newRootFragment(screen = SplashFragment.newInstance())
+            MediatorManager.splashMediator.getApi().showSplashScreen()
         }
     }
 }
+

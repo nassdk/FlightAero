@@ -47,6 +47,7 @@ android {
 dependencies {
     implementation(project(":core-common"))
     implementation(project(":feature-splash"))
+    implementation(project(":feature-flow"))
 
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)

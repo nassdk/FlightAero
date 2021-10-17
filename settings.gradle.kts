@@ -32,3 +32,5 @@ include(":core-common")
 //}
 
 include(":feature-splash")
+include(":feature-flow")
+include(":feature-flights")

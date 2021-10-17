@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/core-navigation" />
             <option value="$PROJECT_DIR$/core-network" />
             <option value="$PROJECT_DIR$/core-ui" />
+            <option value="$PROJECT_DIR$/feature-flights" />
+            <option value="$PROJECT_DIR$/feature-flow" />
             <option value="$PROJECT_DIR$/feature-splash" />
           </set>
         </option>

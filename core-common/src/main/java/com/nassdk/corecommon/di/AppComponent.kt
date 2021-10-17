@@ -1,8 +1,10 @@
 package com.nassdk.corecommon.di
 
 import android.content.Context
+import com.github.terrakok.cicerone.NavigatorHolder
 import com.nassdk.corecommon.base.BaseActivity
 import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
+import com.nassdk.corenavigation.handler.LocalCiceroneHolder
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -20,4 +22,6 @@ interface AppComponent {
     fun inject(activity: BaseActivity)
 
     fun exposeGlobalNavigator(): GlobalNavigator
+    fun exposeNavigatorHolder(): NavigatorHolder
+    fun exposeLocalCiceroneHolder(): LocalCiceroneHolder
 }

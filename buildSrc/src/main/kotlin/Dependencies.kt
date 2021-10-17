@@ -12,6 +12,7 @@ object Dependencies {
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
     const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE}"
     const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE}"
+    const val viewBindingPropertyDelegate = "com.github.kirich1409:viewbindingpropertydelegate:1.4.7"
     const val okHttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP3}"
     const val logging = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3}"
     const val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"

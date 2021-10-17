@@ -12,7 +12,7 @@ import com.nassdk.corecommon.enums.TransitionType
 import com.nassdk.corecommon.extensions.hideKeyboard
 import com.nassdk.corecommon.extensions.ifNull
 
-internal class Navigator(
+class Navigator(
     activity: FragmentActivity,
     containerId: Int
 ) : AppNavigator(
