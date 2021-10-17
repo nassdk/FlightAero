@@ -2,17 +2,40 @@
 <resources>
 
     <!-- Text sizes -->
-    <dimen name="text_8">8sp</dimen>
-    <dimen name="text_10">10sp</dimen>
-    <dimen name="text_12">12sp</dimen>
-    <dimen name="text_14">14sp</dimen>
-    <dimen name="text_16">16sp</dimen>
-    <dimen name="text_18">18sp</dimen>
-    <dimen name="text_20">20sp</dimen>
-    <dimen name="text_24">24sp</dimen>
-    <dimen name="text_28">28sp</dimen>
-    <dimen name="text_32">32sp</dimen>
+    <dimen name="text_B1">10sp</dimen>
+    <dimen name="text_B2">12sp</dimen>
+    <dimen name="text_B3">14sp</dimen>
+    <dimen name="text_B4">16sp</dimen>
+    <dimen name="text_H1">18sp</dimen>
+    <dimen name="text_H2">20sp</dimen>
+    <dimen name="text_H3">24sp</dimen>
+    <dimen name="text_H4">28sp</dimen>
+    <dimen name="text_H5">32sp</dimen>
 
     <!-- !!!......STYLES-START......!!! -->
+
+    <style name="AeroText_RubikBold_H3_Blue">
+        <item name="android:textSize">@dimen/text_H3</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
+        <item name="android:textColor">@color/ui_primary_blue</item>
+    </style>
+
+    <style name="AeroText_RobotoNormal_B3_Black">
+        <item name="android:textSize">@dimen/text_B3</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/ui_black</item>
+    </style>
+
+    <style name="AeroText_RobotoNormal_B2_Gray">
+        <item name="android:textSize">@dimen/text_B2</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/ui_primary_gray</item>
+    </style>
+
+    <style name="AeroText_RobotoNormal_B2_Blue">
+        <item name="android:textSize">@dimen/text_B3</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/ui_primary_blue</item>
+    </style>
 
 </resources>
