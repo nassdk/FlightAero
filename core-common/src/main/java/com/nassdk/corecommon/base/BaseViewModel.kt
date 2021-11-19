@@ -10,23 +10,33 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent> : ViewModel() {
 
-    private val state = MutableStateFlow<S?>(null)
+    private val state by lazy { MutableStateFlow(initialState) }
+
     protected val viewState
         get() = state.asStateFlow().filterNotNull()
 
-    protected val intent = MutableSharedFlow<E>(onBufferOverflow = BufferOverflow.DROP_OLDEST)
+    protected val intent =
+        MutableSharedFlow<E>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+
+    protected abstract val initialState: S
 
     init {
         intent.onEach(::observe).launchIn(viewModelScope)
     }
 
-    protected fun updateState(newState: S) {
-        state.value = newState
+    protected fun updateState(block: S.() -> S) {
+
+        viewModelScope.launch {
+            val currentState = viewState.first()
+            state.value = block.invoke(currentState)
+        }
     }
 
     protected abstract fun observe(event: E)

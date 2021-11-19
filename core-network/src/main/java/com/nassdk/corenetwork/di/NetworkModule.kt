@@ -1,62 +1,54 @@
 package com.nassdk.corenetwork.di
 
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.nassdk.corenetwork.BuildConfig
-import com.nassdk.corenetwork.interceptor.AppInterceptor
+import com.nassdk.corenetwork.NetworkApi
+import com.nassdk.corenetwork.NetworkApiImpl
+import com.nassdk.corenetwork.interceptor.CredentialsInterceptor
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
 
 @Module
-object NetworkModule {
+internal abstract class NetworkModule {
 
-    @Provides
+    @Binds
     @Reusable
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
-        return interceptor
-    }
+    abstract fun bindModuleApi(impl: NetworkApiImpl): NetworkApi
 
-    @Provides
-    @Reusable
-    fun provideOkHttp3(
-        appInterceptor: AppInterceptor,
-        loggingInterceptor: HttpLoggingInterceptor
-    ): OkHttpClient = OkHttpClient.Builder().apply {
-        if (BuildConfig.DEBUG) {
-            addInterceptor(appInterceptor)
-            addInterceptor(loggingInterceptor)
+    companion object {
+
+        @Provides
+        @Reusable
+        fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            return interceptor
         }
-    }.build()
+
+        @Provides
+        @Reusable
+        fun provideOkHttp3(
+            loggingInterceptor: HttpLoggingInterceptor,
+            credentialsInterceptor: CredentialsInterceptor,
+        ): OkHttpClient = OkHttpClient.Builder().apply {
+            if (BuildConfig.DEBUG) {
+                addInterceptor(loggingInterceptor)
+            }
+            addInterceptor(credentialsInterceptor)
+        }.build()
 
 
-    @Provides
-    @Reusable
-    fun provideJson(): Json {
-        return Json(Json.Default) {
-            isLenient = true
-            ignoreUnknownKeys = true
+        @Provides
+        @Reusable
+        fun provideJson(): Json {
+            return Json(Json.Default) {
+                isLenient = true
+                ignoreUnknownKeys = true
+            }
         }
     }
-
-    @OptIn(ExperimentalSerializationApi::class)
-    @Provides
-    @Reusable
-    fun provideRetrofit(
-        client: OkHttpClient,
-        json: Json
-    ): Retrofit =
-        Retrofit.Builder()
-            .baseUrl("http://api.aviationstack.com/v1/")
-            .client(client)
-            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
-            .build()
-
 }

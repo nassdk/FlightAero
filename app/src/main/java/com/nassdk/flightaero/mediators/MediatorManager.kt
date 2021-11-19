@@ -5,4 +5,5 @@ object MediatorManager {
     val flowMediator: FlowMediator = FlowMediator()
     val flightsMediator: FlightsMediator = FlightsMediator()
     val profileMediator: ProfileMediator = ProfileMediator()
+    val networkMediator: NetworkMediator = NetworkMediator()
 }

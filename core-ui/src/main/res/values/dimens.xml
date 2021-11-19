@@ -20,6 +20,7 @@
     <dimen name="border.radius.L">8dp</dimen>
     <dimen name="border.radius.M">12dp</dimen>
     <dimen name="border.radius.S">16dp</dimen>
-    <dimen name="border.radius.XL">24dp</dimen>
+    <dimen name="border.radius.XL">20dp</dimen>
+    <dimen name="border.radius.XXL">24dp</dimen>
 
 </resources>

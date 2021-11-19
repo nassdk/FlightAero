@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="184dp"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:cardBackgroundColor="@color/ui_white"
+            app:cardCornerRadius="@dimen/border.radius.XL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/departurePoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:src="@drawable/icv_departure_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+                    app:layout_constraintEnd_toStartOf="@id/plane"
+                    app:layout_constraintStart_toEndOf="@id/departurePoint"
+                    app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPoint"
+                    app:layout_constraintStart_toEndOf="@id/plane"
+                    app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/plane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icv_airplane"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPoint"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@id/departurePoint"
+                    app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrivalPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:src="@drawable/icv_arrival_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureCity"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departurePoint"
+                    app:layout_constraintTop_toBottomOf="@id/departurePoint" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureTime"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureCity"
+                    app:layout_constraintTop_toBottomOf="@id/departureCity" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalCity"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalPoint"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalPoint" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalTime"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalCity"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalCity" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/status"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureTime"
+                    app:layout_constraintTop_toBottomOf="@id/departureTime" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/status" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/number"
+                    android:layout_width="60dp"
+                    android:layout_height="12dp"
+                    android:layout_marginVertical="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:cardBackgroundColor="@color/ui_white"
+            app:cardCornerRadius="@dimen/border.radius.XL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="184dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/departurePointFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:src="@drawable/icv_departure_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFirst"
+                    app:layout_constraintEnd_toStartOf="@id/planeFirst"
+                    app:layout_constraintStart_toEndOf="@id/departurePointFirst"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFirst" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFirst"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointFirst"
+                    app:layout_constraintStart_toEndOf="@id/planeFirst"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFirst" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planeFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icv_airplane"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFirst"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalTimeFirst"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@id/departurePointFirst"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFirst" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrivalPointFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:src="@drawable/icv_arrival_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureCityFirst"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departurePointFirst"
+                    app:layout_constraintTop_toBottomOf="@id/departurePointFirst" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureTimeFirst"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureCityFirst"
+                    app:layout_constraintTop_toBottomOf="@id/departureCityFirst" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalCityFirst"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalPointFirst"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalPointFirst" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalTimeFirst"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalCityFirst"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalCityFirst" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/statusFirst"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureTimeFirst"
+                    app:layout_constraintTop_toBottomOf="@id/departureTimeFirst" />
+
+                <View
+                    android:id="@+id/dividerFirst"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/statusFirst" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="12dp"
+                    android:layout_marginVertical="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerFirst" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:cardBackgroundColor="@color/ui_white"
+            app:cardCornerRadius="@dimen/border.radius.XL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="184dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/departurePointSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:src="@drawable/icv_departure_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointSecond"
+                    app:layout_constraintEnd_toStartOf="@id/planeSecond"
+                    app:layout_constraintStart_toEndOf="@id/departurePointSecond"
+                    app:layout_constraintTop_toTopOf="@id/departurePointSecond" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointSecond"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointSecond"
+                    app:layout_constraintStart_toEndOf="@id/planeSecond"
+                    app:layout_constraintTop_toTopOf="@id/departurePointSecond" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planeSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icv_airplane"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointSecond"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointSecond"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@id/departurePointSecond"
+                    app:layout_constraintTop_toTopOf="@id/departurePointSecond" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrivalPointSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:src="@drawable/icv_arrival_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureCitySecond"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departurePointSecond"
+                    app:layout_constraintTop_toBottomOf="@id/departurePointSecond" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureTimeSecond"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureCitySecond"
+                    app:layout_constraintTop_toBottomOf="@id/departureCitySecond" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalCitySecond"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalPointSecond"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalPointSecond" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalTimeSecond"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalCitySecond"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalCitySecond" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/statusSecond"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureTimeSecond"
+                    app:layout_constraintTop_toBottomOf="@id/departureTimeSecond" />
+
+                <View
+                    android:id="@+id/dividerSecond"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/statusSecond" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/numberSecond"
+                    android:layout_width="60dp"
+                    android:layout_height="12dp"
+                    android:layout_marginVertical="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerSecond" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:cardBackgroundColor="@color/ui_white"
+            app:cardCornerRadius="@dimen/border.radius.XL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="184dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/departurePointThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:src="@drawable/icv_departure_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointThird"
+                    app:layout_constraintEnd_toStartOf="@id/planeThird"
+                    app:layout_constraintStart_toEndOf="@id/departurePointThird"
+                    app:layout_constraintTop_toTopOf="@id/departurePointThird" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointThird"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointThird"
+                    app:layout_constraintStart_toEndOf="@id/planeThird"
+                    app:layout_constraintTop_toTopOf="@id/departurePointThird" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planeThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icv_airplane"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointThird"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointThird"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@id/departurePointThird"
+                    app:layout_constraintTop_toTopOf="@id/departurePointThird" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrivalPointThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:src="@drawable/icv_arrival_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureCityThird"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departurePointThird"
+                    app:layout_constraintTop_toBottomOf="@id/departurePointThird" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureTimeThird"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureCityThird"
+                    app:layout_constraintTop_toBottomOf="@id/departureCityThird" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalCityThird"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalPointThird"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalPointThird" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalTimeThird"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalCityThird"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalCityThird" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/statusThird"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureTimeThird"
+                    app:layout_constraintTop_toBottomOf="@id/departureTimeThird" />
+
+                <View
+                    android:id="@+id/dividerThird"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/statusThird" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/numberThird"
+                    android:layout_width="60dp"
+                    android:layout_height="12dp"
+                    android:layout_marginVertical="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerThird" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            app:cardBackgroundColor="@color/ui_white"
+            app:cardCornerRadius="@dimen/border.radius.XL">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="184dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/departurePointFourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:src="@drawable/icv_departure_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFourth"
+                    app:layout_constraintEnd_toStartOf="@id/planeFourth"
+                    app:layout_constraintStart_toEndOf="@id/departurePointFourth"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFourth" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:background="@drawable/dashed_line_shimmer"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFourth"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointFourth"
+                    app:layout_constraintStart_toEndOf="@id/planeFourth"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFourth" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/planeFourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icv_airplane"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/departurePointFourth"
+                    app:layout_constraintEnd_toStartOf="@id/arrivalPointFourth"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@id/departurePointFourth"
+                    app:layout_constraintTop_toTopOf="@id/departurePointFourth" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrivalPointFourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:src="@drawable/icv_arrival_point"
+                    android:tint="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureCityFourth"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departurePointFourth"
+                    app:layout_constraintTop_toBottomOf="@id/departurePointFourth" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/departureTimeFourth"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureCityFourth"
+                    app:layout_constraintTop_toBottomOf="@id/departureCityFourth" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalCityFourth"
+                    android:layout_width="50dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalPointFourth"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalPointFourth" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/arrivalTimeFourth"
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="@id/arrivalCityFourth"
+                    app:layout_constraintTop_toBottomOf="@id/arrivalCityFourth" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/statusFourth"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintStart_toStartOf="@id/departureTimeFourth"
+                    app:layout_constraintTop_toBottomOf="@id/departureTimeFourth" />
+
+                <View
+                    android:id="@+id/dividerFourth"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@color/ui_secondary_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/statusFourth" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/numberFourth"
+                    android:layout_width="60dp"
+                    android:layout_height="12dp"
+                    android:layout_marginVertical="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    app:cardBackgroundColor="@color/ui_secondary_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerFourth" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

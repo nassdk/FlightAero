@@ -40,7 +40,8 @@ dependencies {
     implementation(project(":core-di"))
     implementation(project(":core-ui"))
 
-    api(Dependencies.cicerone)
+    api(Dependencies.modo)
+    api(Dependencies.modoRender)
 
     kapt(Dependencies.daggerCompiler)
 }

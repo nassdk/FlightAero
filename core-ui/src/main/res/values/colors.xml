@@ -3,10 +3,13 @@
     <color name="ui_shadow">#33000000</color>
     <color name="ui_black">#000000</color>
     <color name="ui_transparent">#00000000</color>
+
     <color name="ui_white">#FFFFFF</color>
     <color name="ui_primary_white">#F1F1F1</color>
     <color name="ui_primary_orange">#FF9A8D</color>
     <color name="ui_primary_blue">#4A536B</color>
     <color name="ui_primary_gray">#979797</color>
     <color name="ui_primary_turquoise">#AED6DC</color>
+
+    <color name="ui_secondary_gray">#D8D8D8</color>
 </resources>

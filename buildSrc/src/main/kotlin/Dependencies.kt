@@ -7,6 +7,8 @@ object Dependencies {
     const val coil = "io.coil-kt:coil:${Versions.COIL}"
     const val dagger = "com.google.dagger:dagger:${Versions.DAGGER}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
+    const val modo = "com.github.terrakok:modo:${Versions.MODO}"
+    const val modoRender = "com.github.terrakok:modo-render-android-fm:${Versions.MODO}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     const val lifeCycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
@@ -17,7 +19,12 @@ object Dependencies {
     const val logging = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP3}"
     const val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
-    const val cicerone = "com.github.terrakok:cicerone:${Versions.CICERONE}"
     const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION_JSON}"
     const val serializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.SERIALIZATION_CONVERTER}"
+
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_TEST}"
+    const val kaspresso = "com.kaspersky.android-components:kaspresso:${Versions.KASPRESSO}"
+    const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO}"
 }
+
+

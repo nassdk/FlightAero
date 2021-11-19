@@ -1,36 +1,25 @@
 package com.nassdk.corenavigation.di
 
-import com.github.terrakok.cicerone.Cicerone
-import com.github.terrakok.cicerone.NavigatorHolder
-import com.github.terrakok.cicerone.Router
-import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
-import com.nassdk.corenavigation.globalnavigator.GlobalNavigatorImpl
-import dagger.Binds
+import android.content.Context
+import androidx.viewbinding.BuildConfig
+import com.github.terrakok.modo.Modo
+import com.github.terrakok.modo.MultiReducer
+import com.github.terrakok.modo.android.AppReducer
+import com.github.terrakok.modo.android.LogReducer
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-abstract class NavigationModule {
+object NavigationModule {
 
-    @Binds
+    @Provides
     @Singleton
-    abstract fun bindGlobalNavigator(impl: GlobalNavigatorImpl): GlobalNavigator
+    fun provideModo(context: Context): Modo {
+        val reducer = if (BuildConfig.DEBUG)
+            LogReducer(AppReducer(context = context, origin = MultiReducer()))
+        else AppReducer(context = context, origin = MultiReducer())
 
-    companion object {
-
-        private val cicerone = Cicerone.create()
-
-        @Provides
-        @Singleton
-        fun provideRouter(): Router {
-            return cicerone.router
-        }
-
-        @Provides
-        @Singleton
-        fun provideNavigatorHolder(): NavigatorHolder {
-            return cicerone.getNavigatorHolder()
-        }
+        return Modo(reducer = reducer)
     }
 }

@@ -47,8 +47,8 @@ dependencies {
     api(Dependencies.retrofit)
     api(Dependencies.serializationJson)
 
-    implementation(Dependencies.serializationConverter)
-    implementation(Dependencies.okHttp3)
-    implementation(Dependencies.logging)
+    api(Dependencies.serializationConverter)
+    api(Dependencies.okHttp3)
+    api(Dependencies.logging)
     kapt(Dependencies.daggerCompiler)
 }

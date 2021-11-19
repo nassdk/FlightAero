@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="flight_active_tint">#0057FF</color>
+    <color name="flight_scheduled_tint">#FF7A00</color>
+    <color name="flight_landed_tint">#FF7A00</color>
+    <color name="flight_canceled_tint">#C7BF00</color>
+</resources>

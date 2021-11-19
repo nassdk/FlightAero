@@ -3,12 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.27685185185185185" />
+        <entry key="core-ui/src/main/res/layout/item_loading.xml" value="0.25" />
         <entry key="core-ui/src/main/res/layout/layout_bottom_dialog.xml" value="0.42083333333333334" />
         <entry key="core-ui/src/main/res/layout/layout_dialog.xml" value="0.31666666666666665" />
-        <entry key="feature-flights/src/main/res/layout/screen_flights.xml" value="0.42083333333333334" />
+        <entry key="feature-flights/src/main/res/drawable/dashed_line.xml" value="0.3175925925925926" />
+        <entry key="feature-flights/src/main/res/drawable/dashed_line_shimmer.xml" value="0.3175925925925926" />
+        <entry key="feature-flights/src/main/res/drawable/icv_airplane.xml" value="0.4287037037037037" />
+        <entry key="feature-flights/src/main/res/drawable/icv_arrival_point.xml" value="0.1" />
+        <entry key="feature-flights/src/main/res/drawable/icv_chevron_right.xml" value="0.4287037037037037" />
+        <entry key="feature-flights/src/main/res/drawable/icv_departure_point.xml" value="0.4287037037037037" />
+        <entry key="feature-flights/src/main/res/drawable/icv_filters.xml" value="0.4287037037037037" />
+        <entry key="feature-flights/src/main/res/drawable/icv_navigator.xml" value="0.3175925925925926" />
+        <entry key="feature-flights/src/main/res/layout/item_flight.xml" value="0.335" />
+        <entry key="feature-flights/src/main/res/layout/layout_shimmer_loading.xml" value="0.25" />
+        <entry key="feature-flights/src/main/res/layout/screen_flights.xml" value="0.335" />
         <entry key="feature-flights/src/main/res/layout/screen_flow.xml" value="0.42083333333333334" />
+        <entry key="feature-flow/src/main/res/drawable/icv_flow_tab_profile.xml" value="0.43025641025641026" />
+        <entry key="feature-flow/src/main/res/layout/layout_tab.xml" value="0.42083333333333334" />
         <entry key="feature-flow/src/main/res/layout/screen_flow.xml" value="0.375" />
         <entry key="feature-flow/src/main/res/layout/screen_splash.xml" value="0.42083333333333334" />
+        <entry key="feature-splash/src/main/res/drawable/ic_launcher_background.xml" value="0.43025641025641026" />
         <entry key="feature-splash/src/main/res/layout/activity_main.xml" value="0.42083333333333334" />
         <entry key="feature-splash/src/main/res/layout/screen_splash.xml" value="0.335" />
       </map>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nassdk.coreui.external.kit.AeroCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_16"
+    app:cardBackgroundColor="@color/ui_white"
+    app:cardBorderRadius="@dimen/border.radius.XL"
+    app:cardHasClickAnimation="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/departurePoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:src="@drawable/icv_departure_point"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_8"
+            android:background="@drawable/dashed_line"
+            app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+            app:layout_constraintEnd_toStartOf="@id/plane"
+            app:layout_constraintStart_toEndOf="@id/departurePoint"
+            app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_8"
+            android:background="@drawable/dashed_line"
+            app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+            app:layout_constraintEnd_toStartOf="@id/arrivalPoint"
+            app:layout_constraintStart_toEndOf="@id/plane"
+            app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/plane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icv_airplane"
+            app:layout_constraintBottom_toBottomOf="@id/departurePoint"
+            app:layout_constraintEnd_toStartOf="@id/arrivalPoint"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@id/departurePoint"
+            app:layout_constraintTop_toTopOf="@id/departurePoint" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/arrivalPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:src="@drawable/icv_arrival_point"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/departureCity"
+            style="@style/AeroText_RobotoNormal_B3_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintStart_toStartOf="@id/departurePoint"
+            app:layout_constraintTop_toBottomOf="@id/departurePoint"
+            tools:text="Махачкала" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/departureTime"
+            style="@style/AeroText_RobotoNormal_B2_Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintStart_toStartOf="@id/departureCity"
+            app:layout_constraintTop_toBottomOf="@id/departureCity"
+            tools:text="20 октября 20:30" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/arrivalCity"
+            style="@style/AeroText_RobotoNormal_B3_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="@id/arrivalPoint"
+            app:layout_constraintTop_toBottomOf="@id/arrivalPoint"
+            tools:text="Москва" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/arrivalTime"
+            style="@style/AeroText_RobotoNormal_B2_Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintEnd_toEndOf="@id/arrivalCity"
+            app:layout_constraintTop_toBottomOf="@id/arrivalCity"
+            tools:text="20 октября 23:00" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/status"
+            style="@style/AeroText_RobotoNormal_B3_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:drawableStart="@drawable/icv_navigator"
+            android:drawablePadding="@dimen/dimen_8"
+            app:layout_constraintStart_toStartOf="@id/departureTime"
+            app:layout_constraintTop_toBottomOf="@id/departureTime"
+            tools:text="20 октября 23:00"
+            tools:textColor="@color/flight_active_tint" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:background="@color/ui_secondary_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/status" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/number"
+            style="@style/AeroText_RobotoNormal_B3_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_16"
+            android:layout_marginStart="@dimen/dimen_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Рейс №2557 " />
+
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            style="@style/AeroText_RobotoNormal_B3_Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:drawableEnd="@drawable/icv_chevron_right"
+            android:drawablePadding="@dimen/dimen_4"
+            android:gravity="center"
+            android:text="@string/flights_go_into_flight_title"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="@id/number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.nassdk.coreui.external.kit.AeroCardView>

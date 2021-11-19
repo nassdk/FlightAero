@@ -12,5 +12,6 @@ object Plugins {
     const val kotlinMin = "kotlin"
     const val kapt = "kotlin-kapt"
     const val parcelize = "kotlin-parcelize"
+    const val kotlinxSerialization = "kotlinx-serialization"
     const val versions = "com.github.ben-manes.versions"
 }

@@ -1,10 +1,10 @@
 package com.nassdk.featuresplash
 
 import androidx.annotation.MainThread
+import com.github.terrakok.modo.Modo
 import com.nassdk.corecommon.base.BaseApplication
 import com.nassdk.corecommon.di.AppComponent
-import com.nassdk.coredi.scopes.ModuleDependenciesProvider
-import com.nassdk.corenavigation.globalnavigator.GlobalNavigator
+import com.nassdk.coredi.ModuleDependenciesProvider
 import com.nassdk.featuresplash.di.graph.DaggerSplashComponent
 import com.nassdk.featuresplash.di.graph.SplashComponent
 
@@ -35,7 +35,7 @@ object SplashFeature {
 }
 
 interface SplashCoreDependencies {
-    fun exposeGlobalNavigator(): GlobalNavigator
+    fun exposeModo(): Modo
 }
 
 interface SplashDependencies {
@@ -47,10 +47,10 @@ interface SplashActions {
 }
 
 internal class SplashCoreDependenciesDelegate(
-    private val coreComponent: AppComponent
+    private val coreComponent: AppComponent,
 ) : SplashCoreDependencies {
 
-    override fun exposeGlobalNavigator(): GlobalNavigator {
-        return coreComponent.exposeGlobalNavigator()
+    override fun exposeModo(): Modo {
+        return coreComponent.exposeModo()
     }
 }

@@ -11,7 +11,7 @@ import com.nassdk.corecommon.mvi.BaseViewState
 import kotlinx.coroutines.flow.collect
 
 abstract class BaseMviFragment<S : BaseViewState, E : BaseViewEvent, VM : BaseViewModel<S, E>>(
-    @LayoutRes layoutResId: Int
+    @LayoutRes layoutResId: Int,
 ) : BaseFragment(layoutResId = layoutResId) {
 
     protected abstract val viewModel: VM

@@ -3,6 +3,7 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.parcelize)
     id(Plugins.kapt)
+    id(Plugins.kotlinxSerialization)
 }
 
 android {
@@ -42,6 +43,8 @@ android {
 
 dependencies {
     implementation(project(":core-common"))
+
+    implementation(dependencyNotation = "com.facebook.shimmer:shimmer:0.5.0@aar")
 
     kapt(Dependencies.daggerCompiler)
 }

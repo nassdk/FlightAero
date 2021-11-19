@@ -3,8 +3,11 @@ package com.nassdk.corecommon.base
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.nassdk.corecommon.R
 import com.nassdk.corecommon.enums.TransitionType
 import com.nassdk.corecommon.extensions.orFalse
 
@@ -49,5 +52,23 @@ abstract class BaseFragment(@LayoutRes layoutResId: Int) : Fragment(layoutResId)
     private fun isRealRemoving(): Boolean {
         return (isRemoving) ||
                 ((parentFragment as? BaseFragment)?.isRealRemoving().orFalse())
+    }
+
+    protected fun setPrimaryStatusBarColor() {
+
+        requireActivity().window.run {
+            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            statusBarColor = ContextCompat.getColor(requireContext(), R.color.ui_primary_gray)
+        }
+    }
+
+    protected fun setSecondaryStatusBarColor() {
+
+        requireActivity().window.run {
+            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            statusBarColor = ContextCompat.getColor(requireContext(), R.color.ui_white)
+        }
     }
 }

@@ -1,97 +1,62 @@
 package com.nassdk.featureflow.presentation.ui
 
-import android.view.Menu
-import by.kirich1409.viewbindingdelegate.viewBinding
-import com.github.terrakok.cicerone.NavigatorHolder
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.nassdk.FlowFeature
-import com.nassdk.TabFragments
-import com.nassdk.corecommon.base.BaseFragment
-import com.nassdk.corecommon.extensions.uiLazy
-import com.nassdk.corecommon.navigator.Navigator
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import com.github.terrakok.modo.Modo
+import com.github.terrakok.modo.MultiScreen
+import com.github.terrakok.modo.android.multi.MultiStackFragmentImpl
+import com.github.terrakok.modo.backToTabRoot
+import com.github.terrakok.modo.selectStack
+import com.nassdk.featureflow.FlowFeature
 import com.nassdk.featureflow.R
-import com.nassdk.featureflow.databinding.ScreenFlowBinding
 import com.nassdk.featureflow.domain.entity.FlowTab
-import com.nassdk.featureflow.domain.entity.TabFragment
 import javax.inject.Inject
 
-internal class FlowFragment : BaseFragment(R.layout.screen_flow) {
+internal class FlowFragment : MultiStackFragmentImpl() {
 
     companion object {
         fun newInstance() = FlowFragment()
     }
 
-    override fun setupInjection() = FlowFeature.getComponent().inject(this)
-    override fun onFinalDestroy() = FlowFeature.destroyModuleGraph()
+    @Inject lateinit var modo: Modo
 
-    @Inject lateinit var navigatorHolder: NavigatorHolder
-    @Inject lateinit var tabsFragments: TabFragments
-
-    private val viewBinding by viewBinding(ScreenFlowBinding::bind)
-
-    private val navigator by uiLazy {
-        Navigator(requireActivity(), R.id.flowContainer)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        FlowFeature.getComponent().inject(this)
+        super.onCreate(savedInstanceState)
     }
 
-    private val selectTabListener = BottomNavigationView.OnNavigationItemSelectedListener {
-        selectTab(FlowTab.getById(it.itemId))
-        true
-    }
-
-    private val tabFragments by lazy {
-        TabFragment(
-            tabsFragments.provideHomeFragment(),
-            tabsFragments.provideProfileFragment(),
-        )
-    }
-
-
-    override fun setupUi() {
-        FlowTab.values().forEach(::addNavigationTab)
-    }
-
-    private fun addNavigationTab(tab: FlowTab) {
-        val menuItem = viewBinding.navBar.menu
-            .add(
-                Menu.NONE,
-                tab.idRes,
-                tab.ordinal,
-                getString(tab.titleRes)
-            )
-        menuItem.setIcon(tab.iconRes)
-    }
-
-    private fun selectTab(tab: FlowTab) {
-        val currentFragment = childFragmentManager.findFragmentById(R.id.flowContainer)
-        val fragment = getFragment(tab)
-        childFragmentManager.beginTransaction().apply {
-            if (currentFragment != null) {
-                detach(currentFragment)
+    override fun createTabView(index: Int, parent: LinearLayout): View? {
+        return LayoutInflater.from(context)
+            .inflate(R.layout.layout_tab, parent, false)
+            .apply {
+                val item = FlowTab.getBy(position = index)
+                findViewById<TextView>(R.id.tabTitle).text = getString(item.titleRes)
+                findViewById<ImageView>(R.id.tabImage).setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        item.iconRes
+                    )
+                )
+                setOnClickListener {
+                    val currentScreen = modo.state.chain.lastOrNull()
+                    if (currentScreen is MultiScreen) {
+                        if (currentScreen.selectedStack != index) {
+                            modo.selectStack(index)
+                        } else {
+                            modo.backToTabRoot()
+                        }
+                    }
+                }
             }
-            if (!fragment.isAdded) {
-                add(R.id.flowContainer, fragment)
-            }
-            attach(fragment)
-        }.commit()
-
-        viewBinding.navBar.setOnNavigationItemSelectedListener(null)
-        viewBinding.navBar.selectedItemId = tab.idRes
-        viewBinding.navBar.setOnNavigationItemSelectedListener(selectTabListener)
     }
 
-    private fun getFragment(tab: FlowTab) =
-        when (tab) {
-            FlowTab.FLIGHTS -> tabFragments.flights
-            FlowTab.PROFILE -> tabFragments.profile
-        }
-
-    override fun onResume() {
-        navigatorHolder.setNavigator(navigator)
-        super.onResume()
-    }
-
-    override fun onPause() {
-        navigatorHolder.removeNavigator()
-        super.onPause()
+    override fun onDestroy() {
+        FlowFeature.destroyModuleGraph()
+        super.onDestroy()
     }
 }

@@ -1,10 +1,12 @@
 package com.nassdk.featuresplash
 
-import com.nassdk.featuresplash.presentation.navigation.Router
+import com.github.terrakok.modo.android.AppScreen
+import com.nassdk.featuresplash.presentation.navigation.SplashScreens
 import javax.inject.Inject
 
-internal class SplashApiImpl @Inject constructor(
-    private val router: Router
-) : SplashApi {
-    override fun showSplashScreen() = router.openSplashScreen()
+internal class SplashApiImpl @Inject constructor() : SplashApi {
+
+    override fun getSplashAppScreen(): AppScreen {
+        return SplashScreens.Splash()
+    }
 }

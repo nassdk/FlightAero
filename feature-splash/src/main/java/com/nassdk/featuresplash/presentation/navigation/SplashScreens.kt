@@ -1,11 +1,15 @@
 package com.nassdk.featuresplash.presentation.navigation
 
-import com.github.terrakok.cicerone.androidx.FragmentScreen
+import android.annotation.SuppressLint
+import com.github.terrakok.modo.android.AppScreen
 import com.nassdk.featuresplash.presentation.ui.SplashFragment
+import kotlinx.parcelize.Parcelize
 
+@SuppressLint("CustomSplashScreen")
 internal object SplashScreens {
 
-    fun Splash() = FragmentScreen {
-        SplashFragment.newInstance()
+    @Parcelize
+    class Splash : AppScreen("Splash") {
+        override fun create() = SplashFragment.newInstance()
     }
 }

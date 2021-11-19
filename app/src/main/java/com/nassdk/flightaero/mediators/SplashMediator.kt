@@ -1,6 +1,7 @@
 package com.nassdk.flightaero.mediators
 
-import com.nassdk.coredi.scopes.ModuleDependenciesProvider
+import com.github.terrakok.modo.android.MultiAppScreen
+import com.nassdk.coredi.ModuleDependenciesProvider
 import com.nassdk.featuresplash.SplashActions
 import com.nassdk.featuresplash.SplashApi
 import com.nassdk.featuresplash.SplashDependencies
@@ -19,7 +20,19 @@ class SplashMediator {
             override fun getSplashActions(): SplashActions {
                 return object : SplashActions {
                     override fun openFlowScreen() {
-                        MediatorManager.flowMediator.getApi().showFlowScreen()
+
+                        val tabScreens = listOf(
+                            MediatorManager.flightsMediator.getApi().provideFlightsScreen(),
+                            MediatorManager.flightsMediator.getApi().provideFlightsScreen()
+                        )
+
+                        MediatorManager.flowMediator.getApi().showFlowScreen(
+                            screen = MultiAppScreen(
+                                id = "MultiApp Screen id",
+                                roots = tabScreens,
+                                selected = 0
+                            )
+                        )
                     }
                 }
             }
