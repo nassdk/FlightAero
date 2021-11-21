@@ -44,7 +44,11 @@ android {
 dependencies {
     implementation(project(":core-common"))
 
-    implementation(dependencyNotation = "com.facebook.shimmer:shimmer:0.5.0@aar")
+    testImplementation(Dependencies.coroutinesTest)
+    testImplementation(Dependencies.jUnit)
+    testImplementation(Dependencies.mockitoKotlin)
+
+    implementation(dependencyNotation = Dependencies.shimmer)
 
     kapt(Dependencies.daggerCompiler)
 }

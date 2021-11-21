@@ -4,6 +4,7 @@ object Dependencies {
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT}"
     const val material = "com.google.android.material:material:${Versions.MATERIAL}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${Versions.SHIMMER}"
     const val coil = "io.coil-kt:coil:${Versions.COIL}"
     const val dagger = "com.google.dagger:dagger:${Versions.DAGGER}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
@@ -25,6 +26,7 @@ object Dependencies {
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_TEST}"
     const val kaspresso = "com.kaspersky.android-components:kaspresso:${Versions.KASPRESSO}"
     const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO}"
+    const val jUnit = "androidx.test.ext:junit:${Versions.JUNIT}"
 }
 
 

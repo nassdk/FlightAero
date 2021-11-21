@@ -11,6 +11,7 @@ object Versions {
     const val KOTLIN = "1.5.20"
     const val VERSIONS_CHECK = "0.39.0"
     const val MATERIAL = "1.3.0"
+    const val SHIMMER = "0.5.0@aar"
     const val SERIALIZATION_CONVERTER = "0.8.0"
     const val SERIALIZATION_JSON = "1.3.0-RC"
     const val OKHTTP3 = "4.9.0"
@@ -19,6 +20,7 @@ object Versions {
     const val COROUTINES_TEST = "1.5.2"
     const val KASPRESSO = "1.2.0"
     const val MOCKITO = "3.2.0"
+    const val JUNIT = "1.1.0"
 
     const val BUILD_GRADLE = "7.0.0"
 }
