@@ -2,7 +2,6 @@ plugins {
     id(Plugins.application)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
-    id(Plugins.versions)
 }
 
 android {
@@ -45,11 +44,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-common"))
-    implementation(project(":feature-splash"))
-    implementation(project(":feature-flow"))
-    implementation(project(":feature-flights"))
+    implementation(project(path = ":core-common"))
+    implementation(project(path = ":feature-splash"))
+    implementation(project(path = ":feature-flow"))
+    implementation(project(path = ":feature-flights"))
 
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
+    implementation(dependencyNotation = Dependencies.coreKtx)
+    implementation(dependencyNotation = Dependencies.appCompat)
 }

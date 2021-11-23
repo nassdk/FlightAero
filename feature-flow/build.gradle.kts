@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-common"))
+    implementation(project(path = ":core-common"))
 
-    kapt(Dependencies.daggerCompiler)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

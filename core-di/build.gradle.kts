@@ -2,7 +2,6 @@ plugins {
     id(Plugins.javaLibrary)
     id(Plugins.kotlinMin)
     id(Plugins.kapt)
-    id(Plugins.versions)
 }
 
 java {
@@ -11,6 +10,6 @@ java {
 }
 
 dependencies {
-    api(Dependencies.dagger)
-    kapt(Dependencies.daggerCompiler)
+    api(dependencyNotation = Dependencies.dagger)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

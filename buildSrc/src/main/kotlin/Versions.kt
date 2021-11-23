@@ -18,7 +18,7 @@ object Versions {
     const val RETROFIT = "2.9.0"
     const val TIMBER = "4.7.1"
     const val COROUTINES_TEST = "1.5.2"
-    const val KASPRESSO = "1.2.0"
+    const val KASPRESSO = "1.3.0"
     const val MOCKITO = "3.2.0"
     const val JUNIT = "1.1.0"
 

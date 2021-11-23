@@ -2,7 +2,6 @@ plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
-    id(Plugins.versions)
 }
 
 android {
@@ -42,17 +41,17 @@ android {
 }
 
 dependencies {
-    api(project(":core-network"))
-    api(project(":core-di"))
-    api(project(":core-navigation"))
-    api(project(":core-ui"))
+    api(project(path = ":core-network"))
+    api(project(path = ":core-di"))
+    api(project(path = ":core-navigation"))
+    api(project(path = ":core-ui"))
 
-    api(Dependencies.lifeCycleRuntime)
-    api(Dependencies.lifecycleViewModel)
-    api(Dependencies.lifecycleCommon)
-    api(Dependencies.timber)
-    api(Dependencies.viewBindingPropertyDelegate)
+    api(dependencyNotation = Dependencies.lifeCycleRuntime)
+    api(dependencyNotation = Dependencies.lifecycleViewModel)
+    api(dependencyNotation = Dependencies.lifecycleCommon)
+    api(dependencyNotation = Dependencies.timber)
+    api(dependencyNotation = Dependencies.viewBindingPropertyDelegate)
 
-    implementation(Dependencies.serializationJson)
-    kapt(Dependencies.daggerCompiler)
+    implementation(dependencyNotation = Dependencies.serializationJson)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

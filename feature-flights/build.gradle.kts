@@ -42,13 +42,16 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-common"))
+    implementation(project(path = ":core-common"))
 
-    testImplementation(Dependencies.coroutinesTest)
-    testImplementation(Dependencies.jUnit)
-    testImplementation(Dependencies.mockitoKotlin)
+    androidTestImplementation(dependencyNotation = Dependencies.kaspresso)
+    androidTestImplementation(dependencyNotation = Dependencies.jUnit)
+
+    testImplementation(dependencyNotation = Dependencies.coroutinesTest)
+    testImplementation(dependencyNotation = Dependencies.jUnit)
+    testImplementation(dependencyNotation = Dependencies.mockitoKotlin)
 
     implementation(dependencyNotation = Dependencies.shimmer)
 
-    kapt(Dependencies.daggerCompiler)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

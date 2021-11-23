@@ -2,7 +2,6 @@ plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
-    id(Plugins.versions)
 }
 
 android {
@@ -42,13 +41,13 @@ android {
 
 
 dependencies {
-    implementation(project(":core-di"))
+    implementation(project(path = ":core-di"))
 
-    api(Dependencies.retrofit)
-    api(Dependencies.serializationJson)
+    api(dependencyNotation = Dependencies.retrofit)
+    api(dependencyNotation = Dependencies.serializationJson)
 
-    api(Dependencies.serializationConverter)
-    api(Dependencies.okHttp3)
-    api(Dependencies.logging)
-    kapt(Dependencies.daggerCompiler)
+    api(dependencyNotation = Dependencies.serializationConverter)
+    api(dependencyNotation = Dependencies.okHttp3)
+    api(dependencyNotation = Dependencies.logging)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

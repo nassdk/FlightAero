@@ -1,7 +1,6 @@
 plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
-    id(Plugins.versions)
     id(Plugins.parcelize)
 }
 
@@ -41,10 +40,10 @@ android {
 }
 
 dependencies {
-    api(Dependencies.constraint)
-    api(Dependencies.appCompat)
-    api(Dependencies.coreKtx)
-    api(Dependencies.fragment)
-    api(Dependencies.coil)
-    api(Dependencies.material)
+    api(dependencyNotation = Dependencies.constraint)
+    api(dependencyNotation = Dependencies.appCompat)
+    api(dependencyNotation = Dependencies.coreKtx)
+    api(dependencyNotation = Dependencies.fragment)
+    api(dependencyNotation = Dependencies.coil)
+    api(dependencyNotation = Dependencies.material)
 }

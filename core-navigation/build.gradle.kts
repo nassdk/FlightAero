@@ -2,7 +2,6 @@ plugins {
     id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
-    id(Plugins.versions)
 }
 
 android {
@@ -37,11 +36,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-di"))
-    implementation(project(":core-ui"))
+    implementation(project(path = ":core-di"))
+    implementation(project(path = ":core-ui"))
 
-    api(Dependencies.modo)
-    api(Dependencies.modoRender)
+    api(dependencyNotation = Dependencies.modo)
+    api(dependencyNotation = Dependencies.modoRender)
 
-    kapt(Dependencies.daggerCompiler)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }
