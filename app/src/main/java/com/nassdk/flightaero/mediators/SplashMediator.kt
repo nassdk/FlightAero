@@ -23,7 +23,7 @@ class SplashMediator {
 
                         val tabScreens = listOf(
                             MediatorManager.flightsMediator.getApi().provideFlightsScreen(),
-                            MediatorManager.flightsMediator.getApi().provideFlightsScreen()
+                            MediatorManager.profileMediator.getApi().provideProfileScreen()
                         )
 
                         MediatorManager.flowMediator.getApi().showFlowScreen(

@@ -1,6 +1,7 @@
 plugins {
-    id(Plugins.application)
+    id(Plugins.androidLibrary)
     id(Plugins.kotlinAndroid)
+    id(Plugins.parcelize)
     id(Plugins.kapt)
 }
 
@@ -9,11 +10,8 @@ android {
     buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId = AndroidConfig.APPLICATION_ID
         minSdk = AndroidConfig.MIN_SDK
         targetSdk = AndroidConfig.TARGET_SDK
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
 
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTAL_RUNNER
     }
@@ -39,17 +37,11 @@ android {
 
     buildFeatures {
         viewBinding = true
-        buildConfig = true
     }
 }
 
 dependencies {
     implementation(project(path = ":core-common"))
-    implementation(project(path = ":feature-splash"))
-    implementation(project(path = ":feature-flow"))
-    implementation(project(path = ":feature-flights"))
-    implementation(project(path = ":feature-profile"))
 
-    implementation(dependencyNotation = Dependencies.coreKtx)
-    implementation(dependencyNotation = Dependencies.appCompat)
+    kapt(dependencyNotation = Dependencies.daggerCompiler)
 }
