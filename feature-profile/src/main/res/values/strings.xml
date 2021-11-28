@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_toolbar_title">Профиль</string>
+    <string name="profile_name">Никола Тесла</string>
+    <string name="profile_settings_title">Настройки</string>
+    <string name="profile_edit_data">Мои данные</string>
+    <string name="profile_favorites">Избранные рейсы</string>
+</resources>

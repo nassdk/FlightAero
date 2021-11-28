@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/white"
+    app:contentInsetStart="0dp"
+    app:contentInsetStartWithNavigation="0dp"
+    tools:layout_height="60dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Space
+            android:id="@+id/navIconPlaceholder"
+            android:layout_width="56dp"
+            android:layout_height="?android:actionBarSize"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            android:id="@+id/titleText"
+            style="@style/AeroText_RobotoNormal_H2_Black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/menuIconPlaceholder"
+            app:layout_constraintStart_toEndOf="@id/navIconPlaceholder"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Заголовок" />
+
+        <Space
+            android:id="@+id/menuIconPlaceholder"
+            android:layout_width="56dp"
+            android:layout_height="?android:actionBarSize"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.Toolbar>

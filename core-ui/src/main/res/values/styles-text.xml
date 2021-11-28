@@ -38,4 +38,10 @@
         <item name="android:textColor">@color/ui_primary_blue</item>
     </style>
 
+    <style name="AeroText_RobotoNormal_H2_Black">
+        <item name="android:textSize">@dimen/text_H2</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/ui_black</item>
+    </style>
+
 </resources>

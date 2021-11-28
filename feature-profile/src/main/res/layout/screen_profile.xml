@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/appContainer"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipChildren="false" />
+    android:layout_height="match_parent">
+
+    <com.nassdk.coreui.external.common.ToolbarViewBase
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_height="52dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/ui_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="@dimen/dimen_38"
+        android:background="@drawable/ic_tesla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.nassdk.coreui.external.kit.AeroTextView
+        android:id="@+id/name"
+        style="@style/AeroText_RobotoNormal_H2_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_12"
+        android:gravity="center"
+        android:text="@string/profile_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/personBtnsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_40"
+        app:cardCornerRadius="@dimen/border.radius.XL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.nassdk.coreui.external.kit.AeroTextView
+                android:id="@+id/editBtn"
+                style="@style/AeroText_RobotoNormal_B3_Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ui_white"
+                android:drawableStart="@drawable/icv_person"
+                android:drawableEnd="@drawable/icv_arrow_forward"
+                android:drawablePadding="@dimen/dimen_12"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_16"
+                android:paddingVertical="@dimen/dimen_16"
+                android:text="@string/profile_edit_data"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_secondary_gray" />
+
+            <com.nassdk.coreui.external.kit.AeroTextView
+                android:id="@+id/favoritesBtn"
+                style="@style/AeroText_RobotoNormal_B3_Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ui_white"
+                android:drawableStart="@drawable/icv_heart"
+                android:drawableEnd="@drawable/icv_arrow_forward"
+                android:drawablePadding="@dimen/dimen_12"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_16"
+                android:paddingVertical="@dimen/dimen_16"
+                android:text="@string/profile_favorites"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editBtn" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_12"
+        app:cardCornerRadius="@dimen/border.radius.S"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personBtnsContainer">
+
+        <com.nassdk.coreui.external.kit.AeroTextView
+            style="@style/AeroText_RobotoNormal_B3_Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            android:drawableStart="@drawable/icv_settings"
+            android:drawableEnd="@drawable/icv_arrow_forward"
+            android:drawablePadding="@dimen/dimen_12"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_16"
+            android:paddingVertical="@dimen/dimen_16"
+            android:text="@string/profile_settings_title" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
