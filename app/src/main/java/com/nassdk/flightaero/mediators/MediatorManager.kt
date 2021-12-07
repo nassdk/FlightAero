@@ -1,9 +1,9 @@
 package com.nassdk.flightaero.mediators
 
 object MediatorManager {
-    val splashMediator: SplashMediator = SplashMediator()
-    val flowMediator: FlowMediator = FlowMediator()
-    val flightsMediator: FlightsMediator = FlightsMediator()
-    val profileMediator: ProfileMediator = ProfileMediator()
-    val networkMediator: NetworkMediator = NetworkMediator()
+    val splashMediator: SplashMediator by lazy { SplashMediator() }
+    val flowMediator: FlowMediator by lazy { FlowMediator() }
+    val flightsMediator: FlightsMediator by lazy { FlightsMediator() }
+    val profileMediator: ProfileMediator by lazy { ProfileMediator() }
+    val networkMediator: NetworkMediator by lazy { NetworkMediator() }
 }
