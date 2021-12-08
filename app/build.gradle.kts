@@ -44,11 +44,17 @@ android {
 }
 
 dependencies {
-    implementation(project(path = ":core-common"))
-    implementation(project(path = ":feature-splash"))
-    implementation(project(path = ":feature-flow"))
-    implementation(project(path = ":feature-flights"))
-    implementation(project(path = ":feature-profile"))
+
+    projects.run {
+        implementation(dependencyNotation = coreCommon)
+        implementation(dependencyNotation = featureSplash)
+        implementation(dependencyNotation = featureFlow)
+        implementation(dependencyNotation = featureFlights)
+        implementation(dependencyNotation = featureProfile)
+    }
+
+    androidTestImplementation(dependencyNotation = Dependencies.kaspresso)
+    androidTestImplementation(dependencyNotation = Dependencies.jUnit)
 
     implementation(dependencyNotation = Dependencies.coreKtx)
     implementation(dependencyNotation = Dependencies.appCompat)

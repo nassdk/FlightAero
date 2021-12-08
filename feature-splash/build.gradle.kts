@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation(project(path = ":core-common"))
+    implementation(dependencyNotation = projects.coreCommon)
 
     kapt(dependencyNotation = Dependencies.daggerCompiler)
 }

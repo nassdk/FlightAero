@@ -41,10 +41,13 @@ android {
 }
 
 dependencies {
-    api(project(path = ":core-network"))
-    api(project(path = ":core-di"))
-    api(project(path = ":core-navigation"))
-    api(project(path = ":core-ui"))
+
+    projects.run {
+        api(dependencyNotation = coreDi)
+        api(dependencyNotation = coreUi)
+        api(dependencyNotation = coreNetwork)
+        api(dependencyNotation = coreNavigation)
+    }
 
     api(dependencyNotation = Dependencies.lifeCycleRuntime)
     api(dependencyNotation = Dependencies.lifecycleViewModel)

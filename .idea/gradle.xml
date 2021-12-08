@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/core-ui" />
             <option value="$PROJECT_DIR$/feature-flights" />
             <option value="$PROJECT_DIR$/feature-flow" />
+            <option value="$PROJECT_DIR$/feature-profile" />
             <option value="$PROJECT_DIR$/feature-splash" />
           </set>
         </option>

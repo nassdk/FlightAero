@@ -42,10 +42,7 @@ android {
 }
 
 dependencies {
-    implementation(project(path = ":core-common"))
-
-    androidTestImplementation(dependencyNotation = Dependencies.kaspresso)
-    androidTestImplementation(dependencyNotation = Dependencies.jUnit)
+    implementation(dependencyNotation = projects.coreCommon)
 
     testImplementation(dependencyNotation = Dependencies.coroutinesTest)
     testImplementation(dependencyNotation = Dependencies.jUnit)

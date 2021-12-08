@@ -41,7 +41,7 @@ android {
 
 
 dependencies {
-    implementation(project(path = ":core-di"))
+    implementation(dependencyNotation = projects.coreDi)
 
     api(dependencyNotation = Dependencies.retrofit)
     api(dependencyNotation = Dependencies.serializationJson)

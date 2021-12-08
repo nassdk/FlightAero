@@ -36,8 +36,11 @@ android {
 }
 
 dependencies {
-    implementation(project(path = ":core-di"))
-    implementation(project(path = ":core-ui"))
+
+    projects.run {
+        implementation(dependencyNotation = coreDi)
+        implementation(dependencyNotation = coreUi)
+    }
 
     api(dependencyNotation = Dependencies.modo)
     api(dependencyNotation = Dependencies.modoRender)
