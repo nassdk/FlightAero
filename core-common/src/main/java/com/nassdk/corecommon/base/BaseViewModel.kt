@@ -2,21 +2,25 @@ package com.nassdk.corecommon.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nassdk.corecommon.coroutines.CoroutinesDispatcherProvider
 import com.nassdk.corecommon.mvi.BaseViewEvent
 import com.nassdk.corecommon.mvi.BaseViewState
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent>(
     private val initialState: S,
+    private val dispatcherProvider: CoroutinesDispatcherProvider = CoroutinesDispatcherProvider(),
 ) : ViewModel() {
 
     private val state by lazy { MutableStateFlow(initialState) }
@@ -32,15 +36,29 @@ abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent>(
     }
 
     protected fun updateState(block: S.() -> S) {
-
-        viewModelScope.launch {
-            val currentState = viewState.first()
-            state.value = block.invoke(currentState)
-        }
+        state.value = block.invoke(state.value)
     }
 
     protected abstract fun observe(event: E)
 
     fun perform(viewEvent: E) = intent.tryEmit(viewEvent)
     fun viewState(): Flow<S> = viewState
+
+    protected fun launchCoroutine(
+        function: suspend CoroutineScope.() -> Unit,
+    ): Job {
+        return viewModelScope.launch {
+            function()
+        }
+    }
+
+    protected fun launchIOCoroutine(
+        function: suspend CoroutineScope.() -> Unit,
+    ): Job {
+        return launchCoroutine {
+            withContext(dispatcherProvider.io) {
+                function()
+            }
+        }
+    }
 }

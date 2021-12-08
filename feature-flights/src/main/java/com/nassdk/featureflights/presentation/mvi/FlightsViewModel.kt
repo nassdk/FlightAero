@@ -1,16 +1,17 @@
 package com.nassdk.featureflights.presentation.mvi
 
-import androidx.lifecycle.viewModelScope
 import com.nassdk.corecommon.base.BaseViewModel
+import com.nassdk.corecommon.coroutines.CoroutinesDispatcherProvider
 import com.nassdk.featureflights.domain.repo.FlightsRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 internal class FlightsViewModel @Inject constructor(
     private val repository: FlightsRepository,
+    dispatcherProvider: CoroutinesDispatcherProvider = CoroutinesDispatcherProvider(),
 ) : BaseViewModel<FlightsViewState, FlightsViewEvent>(
-    initialState = FlightsViewState.retrieveDefaultState()
+    initialState = FlightsViewState.retrieveDefaultState(),
+    dispatcherProvider = dispatcherProvider
 ) {
 
     init {
@@ -23,25 +24,20 @@ internal class FlightsViewModel @Inject constructor(
             copy(isLoading = true)
         }
 
-        viewModelScope.launch {
+        launchIOCoroutine {
 
-            try {
-                val rtFlightResponse =
-                    repository.getRealTimeFlights(offset = viewState.first().offset)
-                updateState {
-                    copy(
-                        flights = rtFlightResponse.flights,
-                        offset = offset + rtFlightResponse.flights.size,
-                        isLastPage = rtFlightResponse.pagination.offset % DEFAULT_PAGINATION_LIMIT != 0
-                    )
-                }
-            } catch (e: Exception) {
-                updateState {
-                    copy(error = e.localizedMessage.orEmpty())
-                }
-            } finally {
-                updateState { copy(isLoading = false) }
+            val rtFlightResponse =
+                repository.getRealTimeFlights(offset = viewState.first().offset)
+
+            updateState {
+                copy(
+                    flights = rtFlightResponse.flights,
+                    offset = offset + rtFlightResponse.flights.size,
+                    isLastPage = rtFlightResponse.pagination.offset % DEFAULT_PAGINATION_LIMIT != 0,
+                    isLoading = false
+                )
             }
+
         }
     }
 
