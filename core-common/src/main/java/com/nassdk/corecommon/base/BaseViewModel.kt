@@ -15,7 +15,9 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent> : ViewModel() {
+abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent>(
+    private val initialState: S,
+) : ViewModel() {
 
     private val state by lazy { MutableStateFlow(initialState) }
 
@@ -24,8 +26,6 @@ abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent> : ViewModel()
 
     protected val intent =
         MutableSharedFlow<E>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
-
-    protected abstract val initialState: S
 
     init {
         intent.onEach(::observe).launchIn(viewModelScope)

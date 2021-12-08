@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 
 internal class FlightsViewModel @Inject constructor(
     private val repository: FlightsRepository,
-) : BaseViewModel<FlightsViewState, FlightsViewEvent>() {
-
-    override val initialState = FlightsViewState.retrieveDefaultState()
+) : BaseViewModel<FlightsViewState, FlightsViewEvent>(
+    initialState = FlightsViewState.retrieveDefaultState()
+) {
 
     init {
         fetchFlights()

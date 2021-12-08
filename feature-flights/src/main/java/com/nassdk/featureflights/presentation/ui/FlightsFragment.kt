@@ -96,8 +96,8 @@ internal class FlightsFragment : BaseMviFragment<FlightsViewState, FlightsViewEv
         }
     }
 
-    private fun renderError(error: String) {
-        if (error.isBlank()) return
+    private fun renderError(error: String?) {
+        if (error.isNullOrBlank()) return
         Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
     }
 
