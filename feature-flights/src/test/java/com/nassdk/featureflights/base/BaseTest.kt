@@ -1,30 +1,20 @@
 package com.nassdk.featureflights.base
 
-import kotlinx.coroutines.Dispatchers
+import com.nassdk.corecommon.coroutines.CoroutinesDispatcherProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.TestCoroutineScope
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
-import org.junit.After
-import org.junit.Before
+import org.junit.Rule
 
 @ExperimentalCoroutinesApi
 abstract class BaseTest {
 
-    protected val testCoroutineDispatcher = TestCoroutineDispatcher()
-    private val testScope = TestCoroutineScope(testCoroutineDispatcher)
+    private val testCoroutineDispatcher = TestCoroutineDispatcher()
 
-    @Before
-    @Throws(Exception::class)
-    open fun setUp() {
-        Dispatchers.setMain(testCoroutineDispatcher)
-    }
+    @get:Rule val mainCoroutineRule = MainCoroutineRule()
 
-    @After
-    open fun shutDown() {
-        Dispatchers.resetMain()
-        testCoroutineDispatcher.cleanupTestCoroutines()
-        testScope.cleanupTestCoroutines()
-    }
+    protected val dispatcherProvider = CoroutinesDispatcherProvider(
+        main = testCoroutineDispatcher,
+        default = testCoroutineDispatcher,
+        io = testCoroutineDispatcher
+    )
 }

@@ -1,6 +1,7 @@
 package com.nassdk.featureflights.presentation.mvi
 
 import com.nassdk.featureflights.base.BaseTest
+import com.nassdk.featureflights.base.runBlocking
 import com.nassdk.featureflights.domain.entity.FlightEntity
 import com.nassdk.featureflights.domain.entity.FlightStatus
 import com.nassdk.featureflights.domain.entity.PaginationEntity
@@ -22,7 +23,7 @@ internal class FlightsViewModelTest : BaseTest() {
     private val repository: FlightsRepository = mock()
 
     @Test
-    fun `when vm created - then fetch flights`() = runBlockingTest {
+    fun `when vm created - then fetch flights`() = mainCoroutineRule.runBlocking {
 
         //When
         createViewModel()
@@ -32,7 +33,7 @@ internal class FlightsViewModelTest : BaseTest() {
     }
 
     @Test
-    fun `when fetch flights - then success`() = runBlockingTest {
+    fun `when fetch flights - then success`() = mainCoroutineRule.runBlocking {
 
         //Given
         val mockedFlights = listOf(
@@ -61,7 +62,7 @@ internal class FlightsViewModelTest : BaseTest() {
         val state = FlightsViewState(
             isLoading = false,
             flights = mockedFlights,
-            error = "",
+            error = null,
             offset = 1,
             isLastPage = false
         )
@@ -70,7 +71,7 @@ internal class FlightsViewModelTest : BaseTest() {
     }
 
     @Test
-    fun `when fetch flights - then error`() = runBlockingTest {
+    fun `when fetch flights - then error`() = mainCoroutineRule.runBlocking {
 
         //Given
         val httpException = retrofit2.HttpException(
@@ -86,9 +87,9 @@ internal class FlightsViewModelTest : BaseTest() {
         //Then
         val actualState = vm.viewState().first()
         val state = FlightsViewState(
-            isLoading = false,
+            isLoading = true,
             flights = emptyList(),
-            error = "HTTP 404 Response.error()",
+            error = null,
             offset = 0,
             isLastPage = false
         )
@@ -117,9 +118,9 @@ internal class FlightsViewModelTest : BaseTest() {
 
         val actualState = vm.viewState().first()
         val state = FlightsViewState(
-            isLoading = false,
+            isLoading = true,
             flights = flightsPage,
-            error = "",
+            error = null,
             offset = flightsPage.size,
             isLastPage = false
         )
@@ -252,7 +253,8 @@ internal class FlightsViewModelTest : BaseTest() {
 
     private fun createViewModel(): FlightsViewModel {
         return FlightsViewModel(
-            repository = repository
+            repository = repository,
+            dispatcherProvider = dispatcherProvider
         )
     }
 }
