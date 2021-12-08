@@ -4,11 +4,11 @@ import com.nassdk.corecommon.mvi.BaseViewState
 import com.nassdk.featureflights.domain.entity.FlightEntity
 
 internal data class FlightsViewState(
-    var isLoading: Boolean = false,
-    var flights: List<FlightEntity> = emptyList(),
-    var error: String = "",
-    var offset: Int = 0,
-    var isLastPage: Boolean = false
+    val isLoading: Boolean = false,
+    val flights: List<FlightEntity> = emptyList(),
+    val error: String = "",
+    val offset: Int = 0,
+    val isLastPage: Boolean = false,
 ) : BaseViewState {
 
     companion object {
