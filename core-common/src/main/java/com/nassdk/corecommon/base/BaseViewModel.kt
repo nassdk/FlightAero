@@ -3,6 +3,7 @@ package com.nassdk.corecommon.base
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nassdk.corecommon.coroutines.CoroutinesDispatcherProvider
+import com.nassdk.corecommon.error.CoroutinesErrorHandler
 import com.nassdk.corecommon.mvi.BaseViewEvent
 import com.nassdk.corecommon.mvi.BaseViewState
 import kotlinx.coroutines.CoroutineScope
@@ -47,7 +48,7 @@ abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent>(
     protected fun launchCoroutine(
         function: suspend CoroutineScope.() -> Unit,
     ): Job {
-        return viewModelScope.launch {
+        return viewModelScope.launch(CoroutinesErrorHandler()) {
             function()
         }
     }
