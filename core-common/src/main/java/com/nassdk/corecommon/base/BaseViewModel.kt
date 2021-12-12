@@ -20,11 +20,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 abstract class BaseViewModel<S : BaseViewState, E : BaseViewEvent>(
-    private val initialState: S,
+    initialState: S,
     private val dispatcherProvider: CoroutinesDispatcherProvider = CoroutinesDispatcherProvider(),
 ) : ViewModel() {
 
-    private val state by lazy { MutableStateFlow(initialState) }
+    private val state = MutableStateFlow(initialState)
 
     protected val viewState
         get() = state.asStateFlow().filterNotNull()
